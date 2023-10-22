@@ -46,12 +46,13 @@ main {
   position: absolute;
   background: #f8fc9d;
   display: flex;
-  height: 80px;
-  border-radius: 20px;
+  height: 60px;
+  border-radius: 10px;
   width: 50px;
   justify-content: center;
   left: 70px;
-  top: 65px;
+  top: 73px;
   align-items: center;
   text-align: center;
+  font-weight: bold;
 }
