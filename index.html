@@ -15,6 +15,7 @@
         <canvas id="canvas" width="400" height="400" style="max-width: 100%;"></canvas>
         <canvas id="otrocanvas" width="150" height="150" style="display: none"></canvas>
         <canvas id="otrocanvas" width="150" height="150" style="display: none"></canvas>
+        <button class="button" onclick="predecir();">Predecir</button>
         <div class="resultado">
             <img class="imagen" src="temporada.jpg" alt="temporada">
             <div class="resultado-text" id="resultado"></div>
@@ -43,6 +44,14 @@
 
         window.onload = function () {
             mostrarCamara();
+        }
+
+        function predecir() {
+            predecir1();
+            setTimeout(function () {
+                respuesta = "";
+                document.getElementById("resultado").innerHTML = respuesta;
+            }, 3000);
         }
 
         function mostrarCamara() {
@@ -103,7 +112,7 @@
             setTimeout(procesarCamara, 20);
         }
 
-        function predecir() {
+        function predecir1() {
             if (modelo != null) {
                 resample_single(canvas, 100, 100, otrocanvas);
 
@@ -140,11 +149,9 @@
                 } else {
                     respuesta = "Season ducks";
                 }
+
                 document.getElementById("resultado").innerHTML = respuesta;
-
             }
-
-            setTimeout(predecir, 150);
         }
 
         /**
