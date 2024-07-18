@@ -9,21 +9,35 @@ import {
 import Experience from "./Experience";
 
 const experience = [
-  { title: "Backend", color: "bg-red", percentage: 90 },
-  { title: "Diseño Web", color: "bg-yellow", percentage: 82 },
-  { title: "Base de datos", color: "bg-primary", percentage: 70 },
-  { title: "Base de datos", color: "bg-primary", percentage: 70 },
+  { title: "Backend", color: "bg-red", percentage: 70 },
+  { title: "Frontend", color: "bg-primary", percentage: 75 },
+  { title: "FullStack", color: "bg-yellow", percentage: 70 },
+  { title: "Diseño Web", color: "bg-red", percentage: 72 },
+  { title: "Base de datos", color: "bg-primary", percentage: 65 },
+  { title: "Análisis de datos", color: "bg-yellow", percentage: 65 },
 ];
 
 const knowledges = [
   { name: "Python" },
-  { name: "JavaScript" },
   { name: "Django" },
-  { name: "React" },
-  { name: "Python" },
   { name: "JavaScript" },
-  { name: "Django" },
+  { name: "Express" },
   { name: "React" },
+  { name: "Angular" },
+  { name: "Astro" },
+  { name: "NextJs" },
+  { name: "Vue" },
+  { name: "Dart" },
+  { name: "Flutter" },
+  { name: "PostgreSQL" },
+  { name: "PMySQL" },
+  { name: "SQL Server" },
+  { name: "MongoDB" },
+  { name: "Hadoop" },
+  { name: "Spark" },
+  { name: "DataBricks" },
+  { name: "BigQuery" },
+  { name: "Docker" },
 ];
 
 const Resume = () => {
@@ -38,11 +52,24 @@ const Resume = () => {
             </div>
             <Card className="bg-secondary shadow-lg">
               <CardHeader>
-                <CardTitle className="text-muted-foreground text-md">
-                  2021-2023
+                <CardTitle className="text-muted-foreground text-md text-right">
+                  2019-2024
                 </CardTitle>
                 <CardDescription className="flex flex-col">
-                  <span className="text-xl text-primary">Enseñanza Media</span>
+                  <span className="text-xl text-primary">Ingeniería civil en Informática</span>
+                  <span className="text-base text-muted-foreground">
+                    Universidad Autónoma de Chile
+                  </span>
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="bg-secondary shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-muted-foreground text-md text-right">
+                  2017
+                </CardTitle>
+                <CardDescription className="flex flex-col">
+                  <span className="text-xl text-primary">Técnico en Telecomunicaciones</span>
                   <span className="text-base text-muted-foreground">
                     Colegio Juan Luis Undurraga Aninat
                   </span>
@@ -51,21 +78,8 @@ const Resume = () => {
             </Card>
             <Card className="bg-secondary shadow-lg">
               <CardHeader>
-                <CardTitle className="text-muted-foreground text-md">
-                  2021-2023
-                </CardTitle>
-                <CardDescription className="flex flex-col">
-                  <span className="text-xl text-primary">Enseñanza Media</span>
-                  <span className="text-base text-muted-foreground">
-                    Colegio Juan Luis Undurraga Aninat
-                  </span>
-                </CardDescription>
-              </CardHeader>
-            </Card>
-            <Card className="bg-secondary shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-muted-foreground text-md">
-                  2021-2023
+                <CardTitle className="text-muted-foreground text-md text-right">
+                  2012-2016
                 </CardTitle>
                 <CardDescription className="flex flex-col">
                   <span className="text-xl text-primary">Enseñanza Media</span>
@@ -132,7 +146,7 @@ const Resume = () => {
                   return (
                     <span
                       key={index}
-                      className="text-lg bg-primary-foreground dark:bg-primary dark:font-semibold text-primary dark:text-foreground p-2 rounded-lg"
+                      className="text-lg bg-primary-foreground dark:bg-primary dark:font-semibold text-primary dark:text-secondary p-2 rounded-lg"
                     >
                       {item.name}
                     </span>

@@ -13,24 +13,24 @@ import { Card, CardDescription, CardHeader, CardTitle } from "../ui/card";
 
 const data = [
   {
-    date: "2020-2021",
+    date: "12.2023 – 06.2024",
+    position: "Desarrollador FullStack",
+    company: "Auttobots SPA",
+  },
+  {
+    date: "05.2023 – 11.2023",
     position: "Desarrollador FrontEnd",
-    company: "Softiago",
+    company: "SOFTIAGO S.A ",
   },
   {
-    date: "2020-2022",
-    position: "Desarrollador FrontEnd2",
-    company: "Softiago2",
+    date: "12.2022 – 04.2023",
+    position: "Desarrollador Backend",
+    company: "WOM S.A",
   },
   {
-    date: "2020-2023",
-    position: "Desarrollador FrontEnd3",
-    company: "Softiago3",
-  },
-  {
-    date: "2020-2024",
-    position: "Desarrollador FrontEnd4",
-    company: "Softiago4",
+    date: "08.2022 – 11.2022",
+    position: "Desarrollador Backend",
+    company: "UNIVERSIDAD AUTÓNOMA",
   },
 ];
 
@@ -51,7 +51,7 @@ const Experience = () => {
             <CarouselItem key={index} className="basis-1/3">
               <Card className="bg-secondary shadow-lg mt-0">
                 <CardHeader>
-                  <CardTitle className="text-muted-foreground text-md">
+                  <CardTitle className="text-muted-foreground text-md text-right">
                     {item.date}
                   </CardTitle>
                   <CardDescription className="flex flex-col">

@@ -12,7 +12,7 @@ import Work from "@/components/Work/Work";
 const sidebar = [
   { icon: <IoHomeOutline size={22}/>, title: 'Inicio', value: 'about' },
   { icon: <IoHomeOutline size={22}/>, title: 'Resumen', value: 'resume' },
-  // { icon: <IoHomeOutline size={22}/>, title: 'Trabajos', value: 'works' },
+  { icon: <IoHomeOutline size={22}/>, title: 'Trabajos', value: 'works' },
   // { icon: <IoHomeOutline size={25}/>, title: 'Blog', value: 'blogs' },
   // { icon: <IoHomeOutline size={25}/>, title: 'Contacto', value: 'contact' },
 ]
@@ -40,9 +40,9 @@ const page = () => {
                 <h3 className="mb-4 text-primary bg-secondary shadow-lg inline-block px-5 py-1.5 text-base rounded-lg">
                   Desarrollador FullStack
                 </h3>
-                <Socials containerStyles={'flex justify-center gap-x-4'} iconsStyles={'shadow-lg bg-secondary rounded-lg transition-all duration-300 hover:bg-primary text-primary hover:text-primary-foreground dark:hover:text-foreground'}/>
+                <Socials containerStyles={'flex justify-center gap-x-4'} iconsStyles={'shadow-lg bg-secondary rounded-lg transition-all duration-300 hover:bg-primary text-primary hover:text-primary-foreground dark:hover:text-secondary'}/>
                 <Info containerStyles={'bg-secondary mt-5 rounded-lg py-2 px-4'} iconsStyles={'flex-shrink-0 flex justify-center items-center h-9 w-9 rounded-lg bg-accent shadow-md hover:bg-primary hover:text-primary-foreground dark:hover:text-foreground duration-300'}/>
-                <a href="/images/cv.pdf" download="" className="inline-flex items-center mx-auto duration-300 transition-all px-8 py-3 text-lg text-primary rounded-[35px] mt-4 bg-secondary hover:bg-primary hover:text-primary-foreground dark:hover:text-foreground">
+                <a href="/CV_BRYAN_ALEXIS_URRUTIA_URZUA.pdf" download="/CV_BRYAN_ALEXIS_URRUTIA_URZUA.pdf" className="inline-flex items-center mx-auto duration-300 transition-all px-8 py-3 text-lg text-primary rounded-[35px] mt-4 bg-secondary hover:bg-primary hover:text-primary-foreground dark:hover:text-secondary">
                   <DownloadIcon className="mr-2"/>
                   Descargar
                 </a>
