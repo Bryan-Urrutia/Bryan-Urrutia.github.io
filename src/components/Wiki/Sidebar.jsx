@@ -4,6 +4,14 @@ import { TabsList, TabsTrigger } from "../ui/tabs";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import ThemeToggler from "../Header/ThemeToggler";
 import Link from "next/link";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Sidebar = () => {
   return (
@@ -22,9 +30,30 @@ const Sidebar = () => {
           </Link>
         </div>
         <TabsList className="flex-1 py-2 px-2 flex flex-col gap-y-3 justify-start my-2 overflow-y-auto no-scrollbar">
-          <TabsTrigger value="python" className="w-full">
-            PYTHON
-          </TabsTrigger>
+          <DropdownMenu>
+            <DropdownMenuTrigger className="w-full inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none bg-secondary disabled:opacity-50 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-primary dark:text-foreground data-[state=active]:dark:text-primary-foreground duration-200 data-[state=active]:shadow-sm">
+              Python
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="absolute left-[8.1rem] -top-10">
+              <DropdownMenuLabel>Lenguaje Python</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>
+                <TabsTrigger value="select" className="w-full">
+                  ¿Qué es?
+                </TabsTrigger>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <TabsTrigger value="select" className="w-full">
+                  Algoritmos
+                </TabsTrigger>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <TabsTrigger value="select" className="w-full">
+                  Framework Django
+                </TabsTrigger>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
           <TabsTrigger value="json" className="w-full">
             JSON
           </TabsTrigger>
@@ -34,51 +63,25 @@ const Sidebar = () => {
           <TabsTrigger value="react" className="w-full">
             REACT
           </TabsTrigger>
-          <TabsTrigger value="select" className="w-full">
-            SELECT AND SELECT DISTINCT
-          </TabsTrigger>
-          <TabsTrigger value="order&where" className="w-full">
-            ORDER BY AND WHERE
-          </TabsTrigger>
-          <TabsTrigger value="password" className="w-full">
-            Password
-          </TabsTrigger>
-          <TabsTrigger value="password" className="w-full">
-            Password
-          </TabsTrigger>
-          <TabsTrigger value="password" className="w-full">
-            Password
-          </TabsTrigger>
-          <TabsTrigger value="password" className="w-full">
-            Password
-          </TabsTrigger>
-          <TabsTrigger value="password" className="w-full">
-            Password
-          </TabsTrigger>
-          <TabsTrigger value="password" className="w-full">
-            Password
-          </TabsTrigger>
-          <TabsTrigger value="password" className="w-full">
-            Password
-          </TabsTrigger>
-          <TabsTrigger value="password" className="w-full">
-            Password
-          </TabsTrigger>
-          <TabsTrigger value="password" className="w-full">
-            Password
-          </TabsTrigger>
-          <TabsTrigger value="password" className="w-full">
-            Password
-          </TabsTrigger>
-          <TabsTrigger value="password" className="w-full">
-            Password
-          </TabsTrigger>
-          <TabsTrigger value="password" className="w-full">
-            Password
-          </TabsTrigger>
-          <TabsTrigger value="password" className="w-full">
-            Password
-          </TabsTrigger>
+          <DropdownMenu>
+            <DropdownMenuTrigger className="w-full inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none bg-secondary disabled:opacity-50 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-primary dark:text-foreground data-[state=active]:dark:text-primary-foreground duration-200 data-[state=active]:shadow-sm">
+              SQL
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="absolute left-[8.1rem] -top-10">
+              <DropdownMenuLabel>CONSULTAS SQL</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>
+                <TabsTrigger value="select" className="w-full">
+                  SELECT AND SELECT DISTINCT
+                </TabsTrigger>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <TabsTrigger value="order&where" className="w-full">
+                  ORDER BY AND WHERE
+                </TabsTrigger>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </TabsList>
         <div className="border-t flex p-3 items-center justify-between">
           <Avatar>
