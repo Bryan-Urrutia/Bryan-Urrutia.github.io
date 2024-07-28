@@ -11,6 +11,8 @@ import {
 } from "@/components/ui/table";
 
 import { TabsContent } from "@/components/ui/tabs";
+import Format from "@/components/Wiki/Format";
+import Python from "@/components/Wiki/Python";
 import React from "react";
 
 const customers = [
@@ -1468,6 +1470,8 @@ const WikiPage = () => {
   const uniqueCountries = getUniqueCountries(customers);
   return (
     <div className="flex-1">
+      <Python />
+      <Format />
       <TabsContent value="select" className="flex flex-col gap-y-3">
         <h1 className="text-center text-2xl font-bold">
           Declaración SELECT de SQL

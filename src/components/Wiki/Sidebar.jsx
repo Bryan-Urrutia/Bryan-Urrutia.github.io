@@ -32,31 +32,57 @@ const Sidebar = () => {
         <TabsList className="flex-1 py-2 px-2 flex flex-col gap-y-3 justify-start my-2 overflow-y-auto no-scrollbar">
           <DropdownMenu>
             <DropdownMenuTrigger className="w-full inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none bg-secondary disabled:opacity-50 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-primary dark:text-foreground data-[state=active]:dark:text-primary-foreground duration-200 data-[state=active]:shadow-sm">
-              Python
+              PYTHON
             </DropdownMenuTrigger>
             <DropdownMenuContent className="absolute left-[8.1rem] -top-10">
               <DropdownMenuLabel>Lenguaje Python</DropdownMenuLabel>
               <DropdownMenuSeparator />
               <DropdownMenuItem>
-                <TabsTrigger value="select" className="w-full">
+                <TabsTrigger value="about-python" className="w-full">
                   ¿Qué es?
                 </TabsTrigger>
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <TabsTrigger value="select" className="w-full">
+                <TabsTrigger value="code-python" className="w-full">
                   Algoritmos
                 </TabsTrigger>
               </DropdownMenuItem>
               <DropdownMenuItem>
-                <TabsTrigger value="select" className="w-full">
+                <TabsTrigger value="django" className="w-full">
                   Framework Django
                 </TabsTrigger>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-          <TabsTrigger value="json" className="w-full">
-            JSON
-          </TabsTrigger>
+          <DropdownMenu>
+            <DropdownMenuTrigger className="w-full inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none bg-secondary disabled:opacity-50 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground text-primary dark:text-foreground data-[state=active]:dark:text-primary-foreground duration-200 data-[state=active]:shadow-sm">
+              FORMATOS DE SERIALIZACIÓN
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="absolute left-[8.1rem] -top-10">
+              <DropdownMenuLabel>Formatos</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>
+                <TabsTrigger value="csv" className="w-full">
+                  CSV
+                </TabsTrigger>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <TabsTrigger value="json" className="w-full">
+                  JSON
+                </TabsTrigger>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <TabsTrigger value="xml" className="w-full">
+                  XML
+                </TabsTrigger>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <TabsTrigger value="yaml" className="w-full">
+                  YAML
+                </TabsTrigger>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
           <TabsTrigger value="javascript" className="w-full">
             JAVASCRIPT
           </TabsTrigger>
