@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css?family=Sacramento");
+
+.valentines-day {
+  position: relative;
+  cursor: pointer;
+  left: 70px;
+}
+
+.envelope {
+  position: relative;
+  filter: drop-shadow(0 0 25px rgba(0, 0, 0, 0.3));
+}
+
+.envelope:before {
+  content: "";
+  position: absolute;
+  width: 155px;
+  height: 155px;
+  background-color: #ff9494;
+  transform: rotate(-45deg);
+  border-radius: 0 15px 0 0;
+  left: -7px;
+  top: -35px;
+}
+
+.envelope:after {
+  content: "";
+  position: absolute;
+  background-color: #ff9494;
+  width: 220px;
+  height: 180px;
+  left: -40px;
+  top: 43px;
+}
+
+.envelope.true::before,
+.envelope.true::after {
+  background-color: #866e6e;
+}
+
+.heart {
+  position: relative;
+  background-color: #e01911;
+  display: inline-block;
+  height: 60px;
+  top: 110px;
+  left: 40px;
+  transform: rotate(-45deg);
+  width: 60px;
+  filter: drop-shadow(0 -10px 25px rgba(0, 0, 0, 0.3));
+  transition: 0.5s;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  background-color: #e01911;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  position: absolute;
+}
+
+.heart.true,
+.heart.true::before,
+.heart.true::after {
+  background-color: #8d8181;
+}
+
+.heart:before {
+  top: -30px;
+  left: 0px;
+}
+
+.heart:after {
+  left: 30px;
+  top: 0px;
+}
+
+.front {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-right: 100px solid #fbd2d2;
+  border-top: 90px solid transparent;
+  border-bottom: 90px solid transparent;
+  top: 44px;
+  left: 80px;
+  z-index: 4;
+}
+
+.front.true {
+  border-right: 100px solid rgb(181, 181, 181);
+}
+
+.front.true::before {
+  border-left: 100px solid rgb(181, 181, 181);
+}
+
+.front.true::after {
+  border-bottom: 100px solid rgb(218, 196, 196);
+}
+
+
+.front:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 100px solid #fbd2d2;
+  border-top: 90px solid transparent;
+  border-bottom: 90px solid transparent;
+  top: -90px;
+  left: -120px;
+}
+
+.front:after {
+  width: 0;
+  height: 0;
+  position: absolute;
+  content: "";
+  border-bottom: 100px solid #fce7e9;
+  border-right: 110px solid transparent;
+  border-left: 110px solid transparent;
+  top: -10px;
+  left: -120px;
+}
+
+.text {
+  position: absolute;
+  font-family: arial;
+  letter-spacing: 5px;
+  text-align: center;
+  font-weight: 600;
+  color: white;
+  z-index: 2;
+  top: 125px;
+  left: 65px;
+  transition: 0.5s;
+}
+
+.valentines-day:hover .text {
+  transform: translateY(-30px);
+  transition: transform 0.4s ease-in-out;
+}
+
+.valentines-day:hover .heart {
+  transition: transform 0.5s ease-in-out;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translateY(-30px) rotate(-45deg) scale(1);
+  }
+  50% {
+    transform: translateY(-30px) rotate(-45deg) scale(1.1);
+  }
+  100% {
+    transform: translateY(-30px) rotate(-45deg) scale(1);
+  }
+}
+

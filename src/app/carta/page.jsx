@@ -5,6 +5,7 @@ import "./style.css"; // Asegúrate de importar el archivo CSS correctamente
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Sidebar from "./Sidebar";
 
 const Page = () => {
   useEffect(() => {
@@ -77,40 +78,42 @@ const Page = () => {
   }, []);
 
   return (
-    <section className="bg-light dark:bg-dark min-h-screen bg-no-repeat bg-center bg-cover bg-fixed md:pb-16 w-full carta">
-      <div className="valentines-day">
-        <div className="envelope"></div>
-        <div className="heart"></div>
-        <div className="text">
-          PARA: <br />
-          LIDIA CANO
+    <section className="">
+      <div className="h-[4000px]">
+        <div className="valentines-day">
+          <div className="envelope"></div>
+          <div className="heart"></div>
+          <div className="text">
+            PARA: <br />
+            LIDIA CANO
+          </div>
+          <div className="front"></div>
         </div>
-        <div className="front"></div>
-      </div>
 
-      <div id="card">
-        <div className="side one">
-          <h2 className="text-primary ">Para mi lady</h2>
-          <Link
-            href="/flores"
-            className="capitalize relative hover:text-primary transition-all"
-          >
-            <motion.span
-              initial={{ y: "-180%" }}
-              animate={{ y: 0 }}
-              transition={{ type: "twenn" }}
-              layoutId="underline"
-              className="absolute left-0 top-full h-[2px] bg-primary w-full"
-            />
-            Flores
-          </Link>
-        </div>
-        <div className="side two">
-          <h2 className="text-primary">Para mi lady</h2>
-          <p className="text-primary">
-            Querida Lidia quiero qué sepas desde el día qué te conocí me has
-            hecho el hombre más feliz, los días qué hemos compartido
-          </p>
+        <div id="card">
+          <div className="side one">
+            <h2 className="text-primary ">Para mi lady</h2>
+            <Link
+              href="/flores"
+              className="capitalize relative hover:text-primary transition-all"
+            >
+              <motion.span
+                initial={{ y: "-180%" }}
+                animate={{ y: 0 }}
+                transition={{ type: "twenn" }}
+                layoutId="underline"
+                className="absolute left-0 top-full h-[2px] bg-primary w-full"
+              />
+              Flores
+            </Link>
+          </div>
+          <div className="side two">
+            <h2 className="text-primary">Para mi lady</h2>
+            <p className="text-primary">
+              Querida Lidia quiero qué sepas desde el día qué te conocí me has
+              hecho el hombre más feliz, los días qué hemos compartido
+            </p>
+          </div>
         </div>
       </div>
     </section>
