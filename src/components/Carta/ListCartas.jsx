@@ -58,7 +58,7 @@ const ListCartas = () => {
                         }}
                       ></div>
                       <div
-                        className="hidden md:flex wing right bottom-[60px]"
+                        className="hidden md:flex wing right bottom-[60px] cursor-pointer"
                         onClick={() => {
                           setDeleteModal(true);
                           getByIdCarta(carta.id);
