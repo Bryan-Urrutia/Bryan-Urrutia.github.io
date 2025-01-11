@@ -370,7 +370,7 @@
 }
 
 body{
-  display: inline !important;
+  display: inline;
 }
 
 .bg-black\/80 {
