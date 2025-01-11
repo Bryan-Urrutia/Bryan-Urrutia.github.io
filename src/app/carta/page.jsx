@@ -9,7 +9,7 @@ const Page = () => {
     <CartaContextProvider>
       <Carta />
       <ListCartas />
-      <Mensaje />
+      {/* <Mensaje /> */}
     </CartaContextProvider>
   );
 };
