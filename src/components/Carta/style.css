@@ -369,6 +369,10 @@
   --dark-color: #000;
 }
 
+body{
+  display: inline;
+}
+
 body.flores {
   display: flex;
   align-items: flex-end;
@@ -1923,11 +1927,6 @@ body.flores {
     transform: scale(0);
   }
 }
-/*
-.container * {
-  -webkit-animation-play-state: paused !important;
-  animation-play-state: paused !important;
-}*/
 
 
 body, h1, p {
