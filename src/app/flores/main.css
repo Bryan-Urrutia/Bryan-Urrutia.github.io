@@ -11,7 +11,7 @@
 }
 
 body {
-  display: flex;
+  display: inline;
   align-items: flex-end;
   justify-content: space-around;
   min-height: 100vh;
