@@ -2,10 +2,18 @@ import { CartaContext } from "@/context/CartaContext";
 import React, { useContext } from "react";
 import "./style.css";
 import AddCarta from "./AddCarta";
+import UpdateCarta from "./UpdateCarta";
 
 const ListCartas = () => {
-  const { cartas, showMain, handleShowCarta, getByIdCarta } =
-    useContext(CartaContext);
+  const {
+    carta,
+    cartas,
+    showMain,
+    handleShowCarta,
+    getByIdCarta,
+    setUpdateModal,
+  } = useContext(CartaContext);
+
   return (
     <>
       {showMain && (
@@ -13,6 +21,7 @@ const ListCartas = () => {
           <article className="container mx-auto py-10">
             <div className="min-h-screen md:pb-16 w-full">
               <AddCarta />
+              <UpdateCarta />
               <div className="lg:grid flex flex-col lg:grid-cols-2">
                 {cartas.map((carta, index) => {
                   return (
@@ -22,15 +31,25 @@ const ListCartas = () => {
                       key={index}
                     >
                       <div
+                        className="hidden md:flex wing left bottom-[60px] cursor-pointer"
+                        onClick={() => {
+                          setUpdateModal(true);
+                          getByIdCarta(carta.id);
+                        }}
+                        style={{
+                          "--left_wing_color": carta?.color?.left_wing,
+                        }}
+                      ></div>
+                      <div
                         className="hidden md:flex wing right bottom-[60px]"
                         style={{
                           "--right_wing_color": carta?.color?.right_wing,
                         }}
                       ></div>
-                      <div
+                      {/* <div
                         className="hidden md:flex wing left bottom-[60px]"
                         style={{ "--left_wing_color": carta?.color?.left_wing }}
-                      ></div>
+                      ></div> */}
                       <div
                         className="cursor-pointer"
                         onClick={() => {

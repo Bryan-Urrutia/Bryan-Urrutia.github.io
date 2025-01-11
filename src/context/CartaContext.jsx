@@ -8,11 +8,14 @@ export const CartaContextProvider = ({ children }) => {
   const [showMain, setShowMain] = useState(true);
   const [showCarta, setShowCarta] = useState(false);
   const [showMensaje, setShowMensaje] = useState(false);
+  const [showVolver, setShowVolver] = useState(false);
   const [loadingCarta, setLoadingCarta] = useState(false);
   const [loadingMensaje, setLoadingMensaje] = useState(false);
+  const [loadingVolver, setLoadingVolver] = useState(false);
   const [addModal, setAddModal] = useState(false);
   const [updateModal, setUpdateModal] = useState(false);
   const [deleteModal, setDeleteModal] = useState(false);
+  const [loadingUpdate, setLoadingUpdate] = useState(false);
   const [update, setUpdate] = useState(0);
 
   const [colores, setColores] = useState([
@@ -44,15 +47,21 @@ export const CartaContextProvider = ({ children }) => {
     setShowMain(true);
     setShowMensaje(false);
     setShowCarta(false);
+    setShowVolver(false);
+    setLoadingMensaje(false);
+    setLoadingCarta(false);
+    setLoadingVolver(false);
   };
 
   const handleShowCarta = () => {
     setShowCarta(true);
     setShowMain(false);
     setShowMensaje(false);
+    setShowVolver(true);
 
     setTimeout(() => {
       setLoadingCarta(true);
+      setLoadingVolver(true);
     }, 5000);
   };
 
@@ -60,19 +69,25 @@ export const CartaContextProvider = ({ children }) => {
     setShowMensaje(true);
     setShowCarta(false);
     setShowMain(false);
+    setShowVolver(true);
 
     setTimeout(() => {
       setLoadingMensaje(true);
+      setLoadingVolver(true);
     }, 100);
   };
 
-  const [carta, setCarta] = useState({
-    para: "",
-    de: "",
-    izquierda: "",
-    derecha: "",
-    desactivado: false,
-  });
+  const [carta, setCarta] = useState(null);
+
+  const handleSetCarta = () => {
+    setCarta({
+      para: "",
+      de: "",
+      izquierda: "",
+      derecha: "",
+      desactivado: false,
+    });
+  };
 
   const [cartas, setCartas] = useState([null]);
 
@@ -93,17 +108,6 @@ export const CartaContextProvider = ({ children }) => {
   const getCarta = async (cartaId) =>
     axios.get(`https://678054ff85151f714b067e87.mockapi.io/carta/${cartaId}`);
 
-  const putCarta = async (newCarta) =>
-    axios.put(
-      `https://678054ff85151f714b067e87.mockapi.io/carta/${newCarta._id}`,
-      JSON.stringify(newCarta),
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
-
   const deleteCarta = async (cartaId) =>
     axios.delete(
       `https://678054ff85151f714b067e87.mockapi.io/carta/${cartaId}`
@@ -120,11 +124,22 @@ export const CartaContextProvider = ({ children }) => {
       });
   }, [update]);
 
+  useEffect(() => {
+    if (addModal) {
+      handleSetCarta();
+    }
+  }, [addModal]);
+
   const getByIdCarta = async (cartaId) => {
+    setLoadingUpdate(true);
+
     getCarta(cartaId)
       .then((res) => {
         // console.log(res.data);
         setCarta(_.get(res, "data", []));
+        setTimeout(() => {
+          setLoadingUpdate(false);
+        }, 100);
       })
       .catch((err) => {
         console.log(err);
@@ -149,10 +164,27 @@ export const CartaContextProvider = ({ children }) => {
     setUpdate((prev) => prev + 1);
   };
 
+  const putCarta = async (newCarta) => {
+    console.log("New carta", newCarta.id);
+
+    axios.put(
+      `https://678054ff85151f714b067e87.mockapi.io/carta/${newCarta.id}`,
+      JSON.stringify(newCarta),
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+  };
+
   const handleUpdate = (event) => {
     event.preventDefault();
-    putTask(task)
+    console.log("handleUpdate " + carta.id);
+
+    putCarta(carta)
       .then((res) => {
+        console.log(res);
         setUpdate((prev) => prev + 1);
       })
       .catch((err) => {
@@ -180,21 +212,28 @@ export const CartaContextProvider = ({ children }) => {
         handleShowCarta,
         handleShowMain,
         handleShowMensaje,
+        handleSetCarta,
         showMain,
         showCarta,
         showMensaje,
+        showVolver,
         cartas,
         carta,
         setCarta,
         getByIdCarta,
         loadingCarta,
         loadingMensaje,
+        loadingVolver,
         addModal,
         setAddModal,
+        updateModal,
+        setUpdateModal,
         setCarta,
         handleSubmit,
         handleChange,
         handleStyle,
+        handleUpdate,
+        loadingUpdate,
       }}
     >
       {children}

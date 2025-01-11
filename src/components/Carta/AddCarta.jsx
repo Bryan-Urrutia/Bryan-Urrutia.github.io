@@ -28,39 +28,17 @@ const AddCarta = () => {
   const {
     addModal,
     setAddModal,
-    setCarta,
+    carta,
     handleSubmit,
     handleChange,
-    carta,
     handleStyle,
+    handleSetCarta,
   } = useContext(CartaContext);
 
   return (
     <Dialog open={addModal} onOpenChange={setAddModal}>
       <DialogTrigger asChild>
-        <div
-          id="cloud"
-          className="cursor-pointer"
-          // onClick={() => {
-          // setTask({
-          //   company: "",
-          //   model: "",
-          //   name: "",
-          //   abbreviate: "",
-          //   inheritance: "",
-          //   type: "",
-          //   variables: [
-          //     {
-          //       attribute_name: "",
-          //       attribute_display: "",
-          //       attribute_type: "",
-          //       attribute_spec: "",
-          //       attribute_pre: false,
-          //       attribute_validation: false,
-          //     },
-          //   ],
-          // });
-        >
+        <div id="cloud" className="cursor-pointer">
           <p className="relative text-secondary z-50 text-4xl font-medium">
             Crear carta
           </p>
@@ -69,12 +47,14 @@ const AddCarta = () => {
       </DialogTrigger>
       <DialogContent
         className="max-w-[80%] sm:w-[60%] overflow-y-auto"
-        aria-describedby="add-task-description"
+        aria-describedby="add-carta-description"
+        aria-hidden="undefined"
       >
         <DialogHeader>
-          <DialogTitle>Formulario de la tarea</DialogTitle>
+          <DialogTitle>Crear una carta nueva</DialogTitle>
           <DialogDescription>
-            Crear el formulario de la tarea a partir de los siguientes datos:
+            Para crear una cartita nueva tienes qué ingresar los siguientes
+            datos:
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -124,10 +104,10 @@ const AddCarta = () => {
                 />
               </div>
               <div className="grid grid-cols-4 col-span-2 items-center gap-4">
-                <Label htmlFor="company" className="text-center">
+                <Label htmlFor="izquierda" className="text-center">
                   Texto izquierda <br />
                   <br />
-                  {carta?.izquierda.length}/580
+                  {carta?.izquierda?.length}/580
                 </Label>
                 <Textarea
                   id="izquierda"
@@ -139,10 +119,10 @@ const AddCarta = () => {
                 />
               </div>
               <div className="relative grid grid-cols-4 col-span-2 items-center gap-4">
-                <Label htmlFor="company" className="text-center">
+                <Label htmlFor="derecha" className="text-center">
                   Texto derecha <br />
                   <br />
-                  {carta?.derecha.length}/700
+                  {carta?.derecha?.length}/700
                 </Label>
                 <Textarea
                   id="derecha"

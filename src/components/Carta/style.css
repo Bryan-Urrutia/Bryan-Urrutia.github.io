@@ -373,6 +373,11 @@ body{
   display: inline;
 }
 
+.bg-black\/80 {
+  background: none;
+}
+
+
 body.flores {
   display: flex;
   align-items: flex-end;

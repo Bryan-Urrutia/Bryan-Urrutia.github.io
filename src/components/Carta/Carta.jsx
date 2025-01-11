@@ -12,21 +12,24 @@ const variants = {
 const Page = () => {
   const {
     showCarta,
+    showVolver,
     handleShowMensaje,
     loadingCarta,
     showMensaje,
     carta,
     loadingMensaje,
+    handleShowMain,
+    loadingVolver,
   } = useContext(CartaContext);
 
   useEffect(() => {
     // Añadir la clase al body al montar el componente
-    if (showCarta) {
+    if (showVolver) {
       document.body.classList.add("flores");
     } else {
-      // document.body.classList.remove("flores");
+      document.body.classList.remove("flores");
     }
-  }, [showCarta]);
+  }, [showVolver]);
 
   return (
     <>
@@ -36,6 +39,21 @@ const Page = () => {
         } transition-all duration-300`}
       >
         <div className="night"></div>
+        {loadingVolver && (
+          <div
+            id="cloud"
+            className="cursor-pointer"
+            onClick={() => {
+              handleShowMain();
+            }}
+            style={{ position: "absolute", top: "60px", left: "10px" }}
+          >
+            <p className="relative text-secondary z-50 text-4xl font-medium">
+              Volver
+            </p>
+            <span className="shadow"></span>
+          </div>
+        )}
         {(showCarta || showMensaje) && (
           <section className={`${showCarta ? "" : "bg-light dark:bg-dark "}`}>
             <section className="md:pb-16 w-full">
