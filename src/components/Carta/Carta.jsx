@@ -3,6 +3,7 @@ import { useContext, useEffect } from "react";
 import "./style.css";
 
 import { CartaContext } from "@/context/CartaContext";
+import Mensaje from "./Mensaje";
 
 const variants = {
   hidden: { opacity: 0 },
@@ -707,22 +708,29 @@ const Page = () => {
                       loadingMensaje ? "opacity-100" : "opacity-0"
                     } transition-all duration-300`}
                   >
-                    {showMensaje && (
+                    <Mensaje />
+                    {/* {showMensaje && (
                       <section className="">
                         <div id="card">
                           <div className="side one">
-                            <h2 className="text-primary ">{carta.para}</h2>
-                            <p className="text-primary pt-4">
+                            <h2 className="text-primary select-none">
+                              {carta.para}
+                            </h2>
+                            <p className="text-primary pt-4 select-none">
                               {carta.izquierda}
                             </p>
                           </div>
                           <div className="side two">
-                            <p className="text-primary py-4">{carta.derecha}</p>
-                            <p className="flex justify-end">{carta.de}</p>
+                            <p className="text-primary py-4 select-none">
+                              {carta.derecha}
+                            </p>
+                            <p className="flex justify-end select-none">
+                              {carta.de}
+                            </p>
                           </div>
                         </div>
                       </section>
-                    )}
+                    )} */}
                   </div>
                 </div>
               </div>

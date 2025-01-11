@@ -10,17 +10,14 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
-import { TaskContext } from "@/context/TaskContext";
+import { CartaContext } from "@/context/CartaContext";
 import { useContext } from "react";
 
-const DeleteTask = () => {
-  const { handleDelete, deleteModal, setDeleteModal, task } =
-    useContext(TaskContext);
+const DeleteCarta = () => {
+  const { handleDelete, deleteModal, setDeleteModal, carta } =
+    useContext(CartaContext);
   return (
     <AlertDialog open={deleteModal} onOpenChange={setDeleteModal}>
-      <AlertDialogTrigger asChild>
-        <Button>Borrar Formulario</Button>
-      </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>¿Estás absolutamente seguro?</AlertDialogTitle>
@@ -33,7 +30,7 @@ const DeleteTask = () => {
           <AlertDialogCancel>Cancelar</AlertDialogCancel>
           <AlertDialogAction
             onClick={(e) => {
-              handleDelete(e, task._id);
+              handleDelete(e, carta.id);
             }}
           >
             Continuar
@@ -44,4 +41,4 @@ const DeleteTask = () => {
   );
 };
 
-export default DeleteTask;
+export default DeleteCarta;

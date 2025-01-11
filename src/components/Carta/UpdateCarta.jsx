@@ -29,12 +29,13 @@ const UpdateCarta = () => {
     updateModal,
     setUpdateModal,
     carta,
-    setCarta,
     handleUpdate,
     handleChange,
     handleStyle,
     loadingUpdate,
   } = useContext(CartaContext);
+
+  console.log(carta);
 
   return (
     <Dialog open={updateModal} onOpenChange={setUpdateModal}>
@@ -68,11 +69,10 @@ const UpdateCarta = () => {
                     defaultValue={carta?.color?.tipo}
                   >
                     <SelectTrigger className="w-full col-span-3">
-                      <SelectValue placeholder="Selecciona un estilo" />
+                      <SelectValue placeholder={carta?.color?.tipo} />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectGroup>
-                        <SelectLabel>Estilos</SelectLabel>
                         <SelectItem value="Lidia">Lidia</SelectItem>
                         <SelectItem value="Bryan">Bryan</SelectItem>
                       </SelectGroup>

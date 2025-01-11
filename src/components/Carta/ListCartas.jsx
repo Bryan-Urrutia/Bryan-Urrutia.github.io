@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import "./style.css";
 import AddCarta from "./AddCarta";
 import UpdateCarta from "./UpdateCarta";
+import DeleteCarta from "./DeleteCarta";
 
 const ListCartas = () => {
   const {
@@ -12,6 +13,8 @@ const ListCartas = () => {
     handleShowCarta,
     getByIdCarta,
     setUpdateModal,
+    setDeleteModal,
+    handleRefresh,
   } = useContext(CartaContext);
 
   return (
@@ -22,6 +25,20 @@ const ListCartas = () => {
             <div className="min-h-screen md:pb-16 w-full">
               <AddCarta />
               <UpdateCarta />
+              <DeleteCarta />
+              <div
+                id="cloud"
+                className="cursor-pointer"
+                onClick={(e) => {
+                  handleRefresh(e);
+                }}
+                style={{ position: "fixed", top: "60px", right: "60px" }}
+              >
+                <p className="relative text-secondary z-50 text-4xl font-medium select-none">
+                  Recargar
+                </p>
+                <span className="shadow"></span>
+              </div>
               <div className="lg:grid flex flex-col lg:grid-cols-2">
                 {cartas.map((carta, index) => {
                   return (
@@ -42,6 +59,10 @@ const ListCartas = () => {
                       ></div>
                       <div
                         className="hidden md:flex wing right bottom-[60px]"
+                        onClick={() => {
+                          setDeleteModal(true);
+                          getByIdCarta(carta.id);
+                        }}
                         style={{
                           "--right_wing_color": carta?.color?.right_wing,
                         }}
@@ -75,7 +96,7 @@ const ListCartas = () => {
                               "--heart": carta?.color?.heart,
                             }}
                           >
-                            <p className="absolute rotate-45 text-center left-[35px] top-[20px] z-20">
+                            <p className="absolute rotate-45 text-center left-[35px] top-[20px] z-20 select-none">
                               {carta?.id}
                             </p>
                           </div>

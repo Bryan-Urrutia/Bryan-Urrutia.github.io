@@ -39,7 +39,7 @@ const AddCarta = () => {
     <Dialog open={addModal} onOpenChange={setAddModal}>
       <DialogTrigger asChild>
         <div id="cloud" className="cursor-pointer">
-          <p className="relative text-secondary z-50 text-4xl font-medium">
+          <p className="relative text-secondary z-50 text-4xl font-medium select-none">
             Crear carta
           </p>
           <span className="shadow"></span>

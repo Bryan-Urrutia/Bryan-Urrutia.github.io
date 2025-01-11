@@ -108,15 +108,9 @@ export const CartaContextProvider = ({ children }) => {
   const getCarta = async (cartaId) =>
     axios.get(`https://678054ff85151f714b067e87.mockapi.io/carta/${cartaId}`);
 
-  const deleteCarta = async (cartaId) =>
-    axios.delete(
-      `https://678054ff85151f714b067e87.mockapi.io/carta/${cartaId}`
-    );
-
   useEffect(() => {
     getAllCarta()
       .then((res) => {
-        // console.log(res.data);
         setCartas(_.get(res, "data", []));
       })
       .catch((err) => {
@@ -151,7 +145,6 @@ export const CartaContextProvider = ({ children }) => {
     postCarta(carta)
       .then((res) => {
         setUpdate((prev) => prev + 1);
-        console.log(res);
       })
       .catch((err) => {
         console.log(err);
@@ -180,17 +173,32 @@ export const CartaContextProvider = ({ children }) => {
 
   const handleUpdate = (event) => {
     event.preventDefault();
-    console.log("handleUpdate " + carta.id);
-
     putCarta(carta)
       .then((res) => {
-        console.log(res);
-        setUpdate((prev) => prev + 1);
+        setUpdateModal(false);
       })
       .catch((err) => {
         console.log(err);
+        setUpdateModal(false);
       });
-    setUpdateModal(false);
+  };
+
+  const deleteCarta = async (cartaId) =>
+    axios.delete(
+      `https://678054ff85151f714b067e87.mockapi.io/carta/${cartaId}`
+    );
+
+  const handleDelete = (e, cartaId) => {
+    e.preventDefault();
+    deleteCarta(cartaId)
+      .then((res) => {
+        setUpdate((prev) => prev + 1);
+        setDeleteModal(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setDeleteModal(false);
+      });
   };
 
   const handleChange = (e) =>
@@ -234,6 +242,10 @@ export const CartaContextProvider = ({ children }) => {
         handleStyle,
         handleUpdate,
         loadingUpdate,
+        deleteModal,
+        setDeleteModal,
+        handleDelete,
+        handleRefresh,
       }}
     >
       {children}
