@@ -2,7 +2,7 @@
 import { CartaContextProvider } from "@/context/CartaContext";
 import ListCartas from "@/components/Carta/ListCartas";
 import Carta from "@/components/Carta/Carta";
-import Mensaje from "@/components/Carta/Mensaje";
+import Music from "@/components/Carta/Music";
 
 const Page = () => {
   return (

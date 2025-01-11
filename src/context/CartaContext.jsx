@@ -9,6 +9,7 @@ export const CartaContextProvider = ({ children }) => {
   const [showCarta, setShowCarta] = useState(false);
   const [showMensaje, setShowMensaje] = useState(false);
   const [showVolver, setShowVolver] = useState(false);
+  const [loadingMain, setLoadingMain] = useState(true);
   const [loadingCarta, setLoadingCarta] = useState(false);
   const [loadingMensaje, setLoadingMensaje] = useState(false);
   const [loadingVolver, setLoadingVolver] = useState(false);
@@ -51,6 +52,10 @@ export const CartaContextProvider = ({ children }) => {
     setLoadingMensaje(false);
     setLoadingCarta(false);
     setLoadingVolver(false);
+
+    setTimeout(() => {
+      setLoadingMain(true);
+    }, 1000);
   };
 
   const handleShowCarta = () => {
@@ -62,6 +67,7 @@ export const CartaContextProvider = ({ children }) => {
     setTimeout(() => {
       setLoadingCarta(true);
       setLoadingVolver(true);
+      setLoadingMain(false);
     }, 5000);
   };
 
@@ -74,6 +80,7 @@ export const CartaContextProvider = ({ children }) => {
     setTimeout(() => {
       setLoadingMensaje(true);
       setLoadingVolver(true);
+      setLoadingMain(false);
     }, 100);
   };
 
@@ -230,6 +237,7 @@ export const CartaContextProvider = ({ children }) => {
         setCarta,
         getByIdCarta,
         loadingCarta,
+        loadingMain,
         loadingMensaje,
         loadingVolver,
         addModal,
