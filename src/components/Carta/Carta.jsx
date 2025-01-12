@@ -6,6 +6,7 @@ import { CartaContext } from "@/context/CartaContext";
 import Mensaje from "./Mensaje";
 import Music from "./Music";
 import { AudioPlayer } from "react-audio-play";
+import { SkipForward } from "lucide-react";
 
 const variants = {
   hidden: { opacity: 0 },
@@ -42,7 +43,6 @@ const Page = () => {
         } transition-all duration-300`}
       >
         <div className="night"></div>
-        {/* <Music /> */}
         {loadingVolver && (
           <div
             id="cloud"
@@ -718,11 +718,12 @@ const Page = () => {
             </section>
           </section>
         )}
-        <div className="fixed w-full bg-gradient-to-r from-tertiary2/70 to-primary2/10 backdrop-blur-[5px] bottom-0 left-0">
+        <Music />
+        {/* <div className="fixed w-full bg-gradient-to-r from-tertiary2/70 to-primary2/10 backdrop-blur-[5px] bottom-0 left-0">
           <div className="flex justify-center w-full">
             <div className="hidden w-[300px] xl:flex items-center gap-x-4">
               <div className="relative w-16 h-16">
-                {/* <Image src={"/assets/player/avatar.png"} fill alt="" priority /> */}
+                <Image src={"/assets/player/avatar.png"} fill alt="" priority />
               </div>
               <div className="leading-none">
                 <div className="text-lg font-medium">Morat</div>
@@ -745,7 +746,7 @@ const Page = () => {
               />
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );
