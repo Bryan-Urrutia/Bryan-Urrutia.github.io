@@ -59,7 +59,7 @@ const UpdateCarta = () => {
             <div className="grid gap-y-6 py-4">
               <div className="grid grid-cols-2 gap-y-3 w-full">
                 <div className="grid grid-cols-4 col-span-2 items-center gap-4">
-                  <Label htmlFor="company" className="text-center">
+                  <Label htmlFor="color" className="text-center">
                     Estilo
                   </Label>
                   <Select
@@ -80,7 +80,7 @@ const UpdateCarta = () => {
                   </Select>
                 </div>
                 <div className="grid grid-cols-4 items-center gap-4 ">
-                  <Label htmlFor="company" className="text-right">
+                  <Label htmlFor="de" className="text-right">
                     Autor
                   </Label>
                   <Input
@@ -92,7 +92,7 @@ const UpdateCarta = () => {
                   />
                 </div>
                 <div className="grid grid-cols-4 items-center gap-4">
-                  <Label htmlFor="company" className="text-right">
+                  <Label htmlFor="para" className="text-right">
                     Para
                   </Label>
                   <Input
@@ -104,7 +104,7 @@ const UpdateCarta = () => {
                   />
                 </div>
                 <div className="grid grid-cols-4 col-span-2 items-center gap-4">
-                  <Label htmlFor="company" className="text-center">
+                  <Label htmlFor="izquierda" className="text-center">
                     Texto izquierda <br />
                     <br />
                     {carta?.izquierda.length}/580
@@ -116,11 +116,11 @@ const UpdateCarta = () => {
                     onChange={handleChange}
                     value={carta?.izquierda || ""}
                     maxLength={580}
-                    className="col-span-3"
+                    className="col-span-3 text-justify h-32"
                   />
                 </div>
                 <div className="relative grid grid-cols-4 col-span-2 items-center gap-4">
-                  <Label htmlFor="company" className="text-center">
+                  <Label htmlFor="derecha" className="text-center">
                     Texto derecha <br />
                     <br />
                     {carta?.derecha.length}/700
@@ -132,7 +132,7 @@ const UpdateCarta = () => {
                     maxLength={700}
                     value={carta?.derecha || ""}
                     onChange={handleChange}
-                    className="col-span-3"
+                    className="col-span-3 text-justify h-32"
                   />
                 </div>
               </div>

@@ -61,7 +61,7 @@ const AddCarta = () => {
           <div className="grid gap-y-6 py-4">
             <div className="grid grid-cols-2 gap-y-3 w-full">
               <div className="grid grid-cols-4 col-span-2 items-center gap-4">
-                <Label htmlFor="company" className="text-center">
+                <Label htmlFor="color" className="text-center">
                   Estilo
                 </Label>
                 <Select
@@ -82,7 +82,7 @@ const AddCarta = () => {
                 </Select>
               </div>
               <div className="grid grid-cols-4 items-center gap-4 ">
-                <Label htmlFor="company" className="text-right">
+                <Label htmlFor="de" className="text-right">
                   Autor
                 </Label>
                 <Input
@@ -93,7 +93,7 @@ const AddCarta = () => {
                 />
               </div>
               <div className="grid grid-cols-4 items-center gap-4">
-                <Label htmlFor="company" className="text-right">
+                <Label htmlFor="para" className="text-right">
                   Para
                 </Label>
                 <Input
@@ -115,7 +115,7 @@ const AddCarta = () => {
                   placeholder="Mensaje izquierdo de la carta"
                   onChange={handleChange}
                   maxLength={580}
-                  className="col-span-3"
+                  className="col-span-3 text-justify h-32"
                 />
               </div>
               <div className="relative grid grid-cols-4 col-span-2 items-center gap-4">
@@ -130,7 +130,7 @@ const AddCarta = () => {
                   name="derecha"
                   maxLength={700}
                   onChange={handleChange}
-                  className="col-span-3"
+                  className="col-span-3 text-justify h-32"
                 />
               </div>
             </div>

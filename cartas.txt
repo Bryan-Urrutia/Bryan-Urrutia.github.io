@@ -1,0 +1,22 @@
+[
+    {
+      "createdAt": "2025-01-10T18:09:03.334Z",
+      "para": "Mi lady Lidia",
+      "de": "Tu amorcito Bryan",
+      "izquierda": "Querida mía quiero que sepas qué desde que te conocí me has hecho muy feliz, me he sentido muy querido, me he reído un montón y que a pesar de la distancia mi corazón ya es tuyo, espero que pronto podamos vernos y disfrutar cómo dos niños enamorados nuestros días, sé qué valdrá la pena la espera y será genial.",
+      "derecha": " Pienso en ese día llegando a España tu esperándome en el aeropuerto y por fin tenerte enfrente mi amor, darte un beso y poder abrazarte y mimarte jajajaja. Iremos a distintos lugares, nos tomaremos muchas fotitos, será un recuerdo muy bonito, ya qué será la primera vez qué nos vemos en persona, pero ya nos queremos mucho jajaja.",
+      "desactivado": false,
+      "color": {
+        "id": 1,
+        "tipo": "Lidia",
+        "left_side": "#E0CEF2",
+        "right_side": "#E0CEF2",
+        "up_side": "#D7ADFF",
+        "down_side": "#D7ADFF",
+        "left_wing": "#F2F2F2",
+        "right_wing": "#F2F2F2",
+        "heart": "#ff4757"
+      },
+      "id": "1"
+    }
+  ]
