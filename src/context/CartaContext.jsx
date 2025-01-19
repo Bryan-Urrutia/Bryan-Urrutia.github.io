@@ -93,6 +93,7 @@ export const CartaContextProvider = ({ children }) => {
       izquierda: "",
       derecha: "",
       desactivado: false,
+      song: "",
     });
   };
 
@@ -138,6 +139,7 @@ export const CartaContextProvider = ({ children }) => {
       .then((res) => {
         // console.log(res.data);
         setCarta(_.get(res, "data", []));
+        handleChangeSong(_.get(res, "data.song", []));
         setTimeout(() => {
           setLoadingUpdate(false);
         }, 100);
@@ -221,6 +223,116 @@ export const CartaContextProvider = ({ children }) => {
     setCarta({ ...carta, color: coloresLidia });
   };
 
+  const [songs, setSongs] = useState([
+    { src: "/assets/Solo_dia.mp3", autor: "Morat", titulo: "En un solo día" },
+    { src: "/assets/Amapolas.mp3", autor: "Leo Rizzi", titulo: "Amapolas" },
+    { src: "/assets/Besame.mp3", autor: "Camila", titulo: "Bésame" },
+
+    {
+      src: "/assets/Coleccionista.mp3",
+      autor: "Camila",
+      titulo: "Coleccionista de Canciones",
+    },
+    {
+      src: "/assets/Solo_para_ti.mp3",
+      autor: "Camila",
+      titulo: "Solo para ti",
+    },
+    {
+      src: "/assets/Caminar_Mano.mp3",
+      autor: " Rio Roma ft. Fonseca",
+      titulo: "Caminar de tú mano",
+    },
+    {
+      src: "/assets/Colgando.mp3",
+      autor: "Carlos Baute",
+      titulo: " Colgando en Tus Manos",
+    },
+    {
+      src: "/assets/Bonita.mp3",
+      autor: "Carlos Vives",
+      titulo: "Canción Bonita",
+    },
+    {
+      src: "/assets/Casate.mp3",
+      autor: "Silvestre Dangond",
+      titulo: "Cásate Conmigo",
+    },
+
+    {
+      src: "/assets/Enamore.mp3",
+      autor: "Chayanne",
+      titulo: "Me Enamoré De Ti",
+    },
+    {
+      src: "/assets/Esclavo.mp3",
+      autor: "David Bisbal",
+      titulo: "Esclavo De Sus Besos",
+    },
+    {
+      src: "/assets/Enamoro.mp3",
+      autor: "Enrique Iglesias",
+      titulo: "Cuando Me Enamoro",
+    },
+
+    { src: "/assets/Enamora.mp3", autor: "Juanes", titulo: "Me Enamora" },
+    {
+      src: "/assets/Muero.mp3",
+      autor: "La Quinta Estación",
+      titulo: "Me Muero",
+    },
+    {
+      src: "/assets/Destino.mp3",
+      autor: "Melendi",
+      titulo: "Destino o Casualidad",
+    },
+    { src: "/assets/Desde.mp3", autor: "Natalino", titulo: "Desde que te vi" },
+    {
+      src: "/assets/Cambiaste.mp3",
+      autor: "Río Roma",
+      titulo: "Tú me cambiaste la vida",
+    },
+    {
+      src: "/assets/Miedo.mp3",
+      autor: "Alex Ubago",
+      titulo: "Sin miedo a nada",
+    },
+  ]);
+
+  const [currentSongIndex, setCurrentSongIndex] = useState(0);
+
+  const nextSong = () => {
+    setCurrentSongIndex((prevIndex) => (prevIndex + 1) % songs.length);
+  };
+
+  const prevSong = () => {
+    setCurrentSongIndex(
+      (prevIndex) => (prevIndex - 1 + songs.length) % songs.length
+    );
+  };
+
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * songs.length);
+    setCurrentSongIndex(randomIndex);
+  }, []);
+
+  const obtenerCancionPorNombre = (titulo) => {
+    const cancionEncontrada = songs.find(
+      (cancion) => cancion.titulo === titulo
+    );
+    return cancionEncontrada ? cancionEncontrada : null;
+  };
+
+  const handleSong = (titulo) => {
+    const cancion = obtenerCancionPorNombre(titulo);
+    setCarta({ ...carta, song: cancion.titulo });
+  };
+
+  const handleChangeSong = (titulo) => {
+    const idCancion = songs.findIndex((song) => song.titulo === titulo);
+    setCurrentSongIndex(idCancion);
+  };
+
   return (
     <CartaContext.Provider
       value={{
@@ -254,6 +366,13 @@ export const CartaContextProvider = ({ children }) => {
         setDeleteModal,
         handleDelete,
         handleRefresh,
+        colores,
+        songs,
+        currentSongIndex,
+        nextSong,
+        prevSong,
+        handleSong,
+        handleChangeSong,
       }}
     >
       {children}

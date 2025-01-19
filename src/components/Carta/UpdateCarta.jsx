@@ -32,6 +32,10 @@ const UpdateCarta = () => {
     handleUpdate,
     handleChange,
     handleStyle,
+    colores,
+    handleSong,
+    handleChangeSong,
+    songs,
     loadingUpdate,
   } = useContext(CartaContext);
 
@@ -66,6 +70,7 @@ const UpdateCarta = () => {
                     onValueChange={(e) => {
                       handleStyle(e);
                     }}
+                    value={carta?.color?.tipo}
                     defaultValue={carta?.color?.tipo}
                   >
                     <SelectTrigger className="w-full col-span-3">
@@ -73,8 +78,37 @@ const UpdateCarta = () => {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectGroup>
-                        <SelectItem value="Lidia">Lidia</SelectItem>
-                        <SelectItem value="Bryan">Bryan</SelectItem>
+                        {colores.map((c, index) => (
+                          <SelectItem key={index} value={c.tipo}>
+                            {c.tipo}
+                          </SelectItem>
+                        ))}
+                      </SelectGroup>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div className="grid grid-cols-4 col-span-2 items-center gap-4">
+                  <Label htmlFor="color" className="text-center">
+                    Canción
+                  </Label>
+                  <Select
+                    value={carta?.song}
+                    onValueChange={(e) => {
+                      handleSong(e);
+                      handleChangeSong(e);
+                    }}
+                  >
+                    <SelectTrigger className="w-full col-span-3">
+                      <SelectValue placeholder="Selecciona una canción" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectGroup>
+                        <SelectLabel>Canciones</SelectLabel>
+                        {songs.map((s, index) => (
+                          <SelectItem key={index} value={s.titulo}>
+                            {s.titulo}
+                          </SelectItem>
+                        ))}
                       </SelectGroup>
                     </SelectContent>
                   </Select>

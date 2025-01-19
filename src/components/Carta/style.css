@@ -17,6 +17,11 @@
   text-align: center;
   font-family: "Sacramento", cursive;
 }
+
+.pink{
+  color: pink !important;
+}
+
 #card p {
   font-size: 1.7em;
   text-align: justify;
