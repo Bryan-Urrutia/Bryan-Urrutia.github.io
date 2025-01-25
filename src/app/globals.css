@@ -31,7 +31,7 @@
       --blue: 221.2 83.2% 53.3%;
       --blue-foreground: 210 40% 90%;
     }
-  
+
     .dark {
       --background: 222.2 84% 4.9%;
       --foreground: 210 40% 98%;
@@ -60,7 +60,7 @@
       --blue-foreground: 222.2 47.4% 20%;
     }
   }
-  
+
   @layer base {
     * {
       @apply border-border;
@@ -88,3 +88,4 @@
   scrollbar-width: none;
   /* Firefox */
 }
+

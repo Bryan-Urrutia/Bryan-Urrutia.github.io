@@ -2,10 +2,10 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{js,jsx}',
-    './components/**/*.{js,jsx}',
-    './app/**/*.{js,jsx}',
-    './src/**/*.{js,jsx}',
+    "./pages/**/*.{js,jsx}",
+    "./components/**/*.{js,jsx}",
+    "./app/**/*.{js,jsx}",
+    "./src/**/*.{js,jsx}",
   ],
   prefix: "",
   theme: {
@@ -79,19 +79,20 @@ module.exports = {
           to: { height: "0" },
         },
       },
-      textColor: ['group-active'],
-      backgroundColor: ['group-active'],
+      textColor: ["group-active"],
+      backgroundColor: ["group-active"],
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       backgroundImage: {
-        dark: 'url(/bgdark.jpg)',
-        light: 'url(/bglight.jpg)',
-        work_project_bg_light: 'url(/work/project-bg-light.png)',
-        work_project_bg_dark: 'url(/work/project-bg-dark.png)',
-      }
+        cuento: "url(/cuentos/portada.jpg)",
+        dark: "url(/bgdark.jpg)",
+        light: "url(/bglight.jpg)",
+        work_project_bg_light: "url(/work/project-bg-light.png)",
+        work_project_bg_dark: "url(/work/project-bg-dark.png)",
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};
