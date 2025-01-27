@@ -42,6 +42,17 @@ export const CartaContextProvider = ({ children }) => {
       right_wing: "#F2F2F2",
       heart: "#4496ea",
     },
+    {
+      id: 3,
+      tipo: "Claudia",
+      left_side: "#00AAE4",
+      right_side: "#00AAE4",
+      up_side: "#51D1F6",
+      down_side: "#51D1F6",
+      left_wing: "#F2F2F2",
+      right_wing: "#F2F2F2",
+      heart: "#ff4757",
+    },
   ]);
 
   const handleShowMain = () => {
@@ -296,6 +307,11 @@ export const CartaContextProvider = ({ children }) => {
       src: "/assets/Miedo.mp3",
       autor: "Alex Ubago",
       titulo: "Sin miedo a nada",
+    },
+    {
+      src: "/assets/Chk_Chk_Boom.mp3",
+      autor: "Stray Kids",
+      titulo: "Chk Chk Boom",
     },
   ]);
 
