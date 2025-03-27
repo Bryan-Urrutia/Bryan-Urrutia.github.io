@@ -235,6 +235,7 @@ export const CartaContextProvider = ({ children }) => {
   };
 
   const [songs, setSongs] = useState([
+    { src: "/assets/Sabes.mp3", autor: "Reik", titulo: "Sabes" },
     { src: "/assets/Solo_dia.mp3", autor: "Morat", titulo: "En un solo día" },
     { src: "/assets/Amapolas.mp3", autor: "Leo Rizzi", titulo: "Amapolas" },
     { src: "/assets/Besame.mp3", autor: "Camila", titulo: "Bésame" },
@@ -257,7 +258,7 @@ export const CartaContextProvider = ({ children }) => {
     {
       src: "/assets/Colgando.mp3",
       autor: "Carlos Baute",
-      titulo: " Colgando en Tus Manos",
+      titulo: "Colgando en Tus Manos",
     },
     {
       src: "/assets/Bonita.mp3",
@@ -316,6 +317,12 @@ export const CartaContextProvider = ({ children }) => {
   ]);
 
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
+
+  useEffect(() => {
+    setSongs((prevSongs) =>
+      [...prevSongs].sort((a, b) => a.titulo.localeCompare(b.titulo))
+    );
+  }, []);
 
   const nextSong = () => {
     setCurrentSongIndex((prevIndex) => (prevIndex + 1) % songs.length);
