@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tulipán Ultra Detallado con HTML y CSS</title>
+    <style>
+      /* Fondo con gradiente nocturno y partículas */
+      body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(180deg, #3a3a6e 0%, #1a1a3d 100%);
+        overflow: hidden;
+      }
+      .star {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 50%;
+        animation: twinkle 3s infinite ease-in-out;
+      }
+      @keyframes twinkle {
+        0%,
+        100% {
+          opacity: 0.3;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+
+      /* Contenedor del tulipán */
+      .tulip {
+        position: relative;
+        width: 140px;
+        height: 260px;
+        filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+      }
+      /* Tallo detallado con banda central y sombras */
+      .stem {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 14px;
+        height: 180px;
+        background: linear-gradient(180deg, #b2f2bb 0%, #2e7d32 100%);
+        border-radius: 7px;
+      }
+      .stem::before {
+        content: "";
+        position: absolute;
+        top: 20%;
+        left: 10%;
+        width: 80%;
+        height: 60%;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 7px;
+      }
+
+      /* Hojas con venas sutiles */
+      .leaf {
+        position: absolute;
+        bottom: 60px;
+        width: 80px;
+        height: 35px;
+        background: linear-gradient(180deg, #9ccc65 0%, #388e3c 100%);
+        border-radius: 50% 50% 40% 40%;
+      }
+      .leaf.left {
+        left: 50%;
+        transform: translateX(-50%) rotate(-45deg);
+        transform-origin: left center;
+      }
+      .leaf.right {
+        left: 50%;
+        transform: translateX(-50%) rotate(45deg);
+        transform-origin: right center;
+      }
+      .leaf::after {
+        content: "";
+        position: absolute;
+        top: 20%;
+        left: 15%;
+        width: 70%;
+        height: 2px;
+        background: rgba(0, 0, 0, 0.1);
+        transform: rotate(10deg);
+      }
+
+      /* Pétalos: múltiples capas y detalles de vena */
+      .petal {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 110px;
+        height: 110px;
+        background: radial-gradient(circle at 50% 30%, #fff59d, #ffca28);
+        border-radius: 50% 50% 40% 40%;
+        transform-origin: bottom center;
+        box-shadow: inset 0 -15px 25px rgba(0, 0, 0, 0.15),
+          0 5px 10px rgba(0, 0, 0, 0.2);
+      }
+      .petal.back1 {
+        transform: translateX(-50%) rotate(-25deg);
+        z-index: 0;
+      }
+      .petal.back2 {
+        transform: translateX(-50%) rotate(25deg);
+        z-index: 0;
+      }
+      .petal.side-left {
+        transform: translateX(-50%) rotate(-10deg);
+        z-index: 1;
+      }
+      .petal.side-right {
+        transform: translateX(-50%) rotate(10deg);
+        z-index: 1;
+      }
+      .petal.center {
+        width: 100px;
+        height: 130px;
+        top: -10px;
+        background: radial-gradient(circle at 50% 20%, #ffe082, #ffb300);
+        z-index: 2;
+        transform: translateX(-50%);
+      }
+      /* Venitas en pétalos */
+      .petal::before {
+        content: "";
+        position: absolute;
+        bottom: 20%;
+        left: 50%;
+        width: 2px;
+        height: 60%;
+        background: rgba(0, 0, 0, 0.05);
+        transform: translateX(-50%) skewX(-10deg);
+      }
+      .petal::after {
+        content: "";
+        position: absolute;
+        bottom: 25%;
+        left: 45%;
+        width: 2px;
+        height: 50%;
+        background: rgba(0, 0, 0, 0.03);
+        transform: skewX(-8deg);
+      }
+
+      /* Gotas de rocío */
+      .drop {
+        position: absolute;
+        width: 8px;
+        height: 12px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 50% 50% 60% 60%;
+        transform: rotate(-20deg);
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+      }
+      .drop:nth-child(1) {
+        top: 20px;
+        left: 40px;
+      }
+      .drop:nth-child(2) {
+        top: 50px;
+        left: 60px;
+        transform: rotate(10deg);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Estrellas de fondo generadas por JS -->
+    <script>
+      for (let i = 0; i < 30; i++) {
+        const star = document.createElement("div");
+        star.className = "star";
+        star.style.top = Math.random() * 100 + "vh";
+        star.style.left = Math.random() * 100 + "vw";
+        star.style.animationDuration = 2 + Math.random() * 3 + "s";
+        document.body.appendChild(star);
+      }
+    </script>
+
+    <div class="tulip">
+      <div class="stem"></div>
+      <div class="leaf left"></div>
+      <div class="leaf right"></div>
+      <div class="petal back1"></div>
+      <div class="petal back2"></div>
+      <div class="petal side-left"></div>
+      <div class="petal side-right"></div>
+      <div class="petal center"></div>
+      <div class="drop"></div>
+      <div class="drop"></div>
+    </div>
+  </body>
+</html>
