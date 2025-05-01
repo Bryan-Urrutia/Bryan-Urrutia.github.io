@@ -119,12 +119,12 @@
 
 .stemleaf.leaf-0{
   opacity: 0.8;
-  transform: rotate(130deg) translate(-35px,-40px) scale(2);
+  transform: rotate(130deg) translate(-35px,-45px) scale(2) skew(40deg, 500deg);
 }
 
 .stemleaf.leaf-1{
   opacity: 0.8;
-  transform: rotate(130deg) translate(40px, 60px) scale(2);
+  transform: rotate(210deg) translate(65px, -35px) scale(2) skew(40deg, 500deg);
 }
 
 .leaf{
@@ -143,7 +143,8 @@
   z-index: 5;
   width: 40px;
   height: 50px;
-  top: 30px;
+  top: 40px;
+  left: 4px;
   background-color: rgba(232, 17, 221, 0.545);
   border-radius: 2px 50px;
   opacity: 0;
@@ -310,3 +311,39 @@
   transform: rotate(90deg) translate(-12px,-50px) scale(2);
 }
 
+.side {
+  background: #eee;
+  height: 550px;
+  width: 420px;  
+}
+.side.one {
+  background: linear-gradient(90deg, #fff, #fff 40%, #ddd);
+  position: relative;
+  border-radius: 2px 50px;
+}
+.side.two {
+  position: relative;
+  border-radius: 50px 2px;
+  background: linear-gradient(-90deg, #fff, #fff 40%, #f0f0f0);
+}
+
+#recuerdo h2 {
+  font-size: 3em;
+  margin: 0;
+  color: pink;
+  text-align: center;
+  font-family: "Sacramento", cursive;
+}
+
+.pink{
+  color: pink !important;
+}
+
+#recuerdo p {
+  font-size: 1.7em;
+  text-align: justify;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-family: "Sacramento", cursive;
+  color: black;
+}
