@@ -314,6 +314,11 @@ export const CartaContextProvider = ({ children }) => {
       autor: "Stray Kids",
       titulo: "Chk Chk Boom",
     },
+    {
+      src: "/assets/StrayKids.mp3",
+      autor: "Stray Kids",
+      titulo: "Stray Kids",
+    },
   ]);
 
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
