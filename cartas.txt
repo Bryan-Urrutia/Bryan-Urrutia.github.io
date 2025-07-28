@@ -1,22 +1,275 @@
 [
-    {
-      "createdAt": "2025-01-10T18:09:03.334Z",
-      "para": "Mi lady Lidia",
-      "de": "Tu amorcito Bryan",
-      "izquierda": "Querida mía quiero que sepas qué desde que te conocí me has hecho muy feliz, me he sentido muy querido, me he reído un montón y que a pesar de la distancia mi corazón ya es tuyo, espero que pronto podamos vernos y disfrutar cómo dos niños enamorados nuestros días, sé qué valdrá la pena la espera y será genial.",
-      "derecha": " Pienso en ese día llegando a España tu esperándome en el aeropuerto y por fin tenerte enfrente mi amor, darte un beso y poder abrazarte y mimarte jajajaja. Iremos a distintos lugares, nos tomaremos muchas fotitos, será un recuerdo muy bonito, ya qué será la primera vez qué nos vemos en persona, pero ya nos queremos mucho jajaja.",
-      "desactivado": false,
-      "color": {
-        "id": 1,
-        "tipo": "Lidia",
-        "left_side": "#E0CEF2",
-        "right_side": "#E0CEF2",
-        "up_side": "#D7ADFF",
-        "down_side": "#D7ADFF",
-        "left_wing": "#F2F2F2",
-        "right_wing": "#F2F2F2",
-        "heart": "#ff4757"
-      },
-      "id": "1"
-    }
-  ]
+	{
+		"createdAt": "2025-01-19T10:17:16.188Z",
+		"para": "Mi lady Lidia",
+		"de": "Tu amorcito Bryan❤",
+		"izquierda": "Querida mía quiero que sepas qué desde que te conocí me has hecho muy feliz, me he sentido muy querido, me he reído un montón y que a pesar de la distancia mi corazón ya es tuyo, espero que pronto podamos vernos y disfrutar cómo dos niños enamorados nuestros días, sé qué valdrá la pena la espera y será genial.",
+		"derecha": "Pienso en ese día llegando a España tu esperándome en el aeropuerto y por fin tenerte enfrente mi amor, darte un beso y poder abrazarte y mimarte jajajaja. Iremos a distintos lugares, nos tomaremos muchas fotitos, será un recuerdo muy bonito, ya qué será la primera vez qué nos vemos en persona, pero ya nos queremos mucho jajaja.",
+		"desactivado": false,
+		"color": {
+			"id": 1,
+			"tipo": "Lidia",
+			"left_side": "#E0CEF2",
+			"right_side": "#E0CEF2",
+			"up_side": "#D7ADFF",
+			"down_side": "#D7ADFF",
+			"left_wing": "#F2F2F2",
+			"right_wing": "#F2F2F2",
+			"heart": "#ff4757"
+		},
+		"song": "Canción Bonita",
+		"id": "1"
+	},
+	{
+		"createdAt": "2025-01-19T13:19:17.749Z",
+		"para": "Mi niño bonito",
+		"de": "Tu chenofoba favorita",
+		"izquierda": "Mi amor, te escribo esta cartita para agradecerte todo lo que haces por mí. Me ha encantado la sorpresa que has hecho, porque sé que lo has hecho con mucho amor y cariño. Me ha gustado mucho porque es algo que vamos a poder compartir y disfrutar los dos juntitos. Quiero que sepas que eres en una persona muy especial para mí, no me imagino estando sin ti.",
+		"derecha": "Me gusta cómo eres conmigo y me gusta quién soy cuando estoy contigo, porque contigo puedo ser realmente yo misma. Tú eres mi lugar seguro y espero ser yo para ti el tuyo. Siempre te voy a cuidar, apoyar, admirar y querer muucho. Me encanta pasar tiempo juntos. Cuando estamos juntos las horas se convierten en segundos. Quiero seguir conociéndote y ganarte al parchís. Para mi tú eres maravilloso. Eres mi persona favorita. Recuerda lo mucho que te quiero.",
+		"desactivado": false,
+		"color": {
+			"id": 2,
+			"tipo": "Bryan",
+			"left_side": "#eecd7b",
+			"right_side": "#eecd7b",
+			"up_side": "#d4a733",
+			"down_side": "#d4a733",
+			"left_wing": "#F2F2F2",
+			"right_wing": "#F2F2F2",
+			"heart": "#4496ea"
+		},
+		"song": "Amapolas",
+		"id": "2"
+	},
+	{
+		"createdAt": "2025-01-19T15:59:10.114Z",
+		"para": "Mi amorcito",
+		"de": "Tu lady Lidia",
+		"izquierda": "Mi niño, seguramente estés durmiendo mientras te escribo esto. Me gustaría poder despertarte dándote muchos besitos y diciéndote lo mucho que te quiero. No sé cuándo vas a leer esta cartita, ya que eres un dormilón y te levantas cerca de las tres de la tarde. Entiendo que eres un viejito muy mono y que necesitas descansar 😉. ",
+		"derecha": "Me encanta cómo eres. Me encanta que compartas tus gustos conmigo. Me encantan nuestras bromas. Me encanta hablar contigo y me encanta lo que estamos construyendo juntos.  Se que a veces me cuesta expresar lo que siento, pero eso no significa que no sienta muchísimas cosas bonitas por ti. Contigo soy mucho más feliz. No puedo imaginarme estar sin ti ya, mi amor. Quiero quererte y demostrártelo como te mereces. Eres un amor conmigo.\nTe quiero muchito",
+		"desactivado": false,
+		"color": {
+			"id": 2,
+			"tipo": "Bryan",
+			"left_side": "#eecd7b",
+			"right_side": "#eecd7b",
+			"up_side": "#d4a733",
+			"down_side": "#d4a733",
+			"left_wing": "#F2F2F2",
+			"right_wing": "#F2F2F2",
+			"heart": "#4496ea"
+		},
+		"song": "Me Enamoré De Ti",
+		"id": "3"
+	},
+	{
+		"createdAt": "2025-01-22T14:55:01.002Z",
+		"para": "Mi Spider-man ",
+		"de": "Tu nóctulo Lidia",
+		"izquierda": "Hoy especialmente he pensado mucho en ti mi amor 🥰. Me gusta pensar en que tengo a alguien como tú a mi lado; alguien que me quiere, me acompaña cuando más lo necesito, me saca una sonrisa cuando el día ha sido un desastre y que, además,  me motiva cada día a ser mejor. Cuando atardece y veo el cielo bonito, siempre pienso en que me encantaría verlo contigo. ",
+		"derecha": "Aunque también pienso que eres la persona con la que quiero compartir todos los momentos, tanto los buenos como los que no lo son tanto.  Siempre me calmas e intentas ayudarme. Me haces muy bien en mi vida. \nPor muy lejos que estemos, te siento cerca mi amor. Al menos estamos en el mismo planeta, podría ser peor  😂. Espero con ganas el momento en el que podamos estar juntitos mi niño bonito. \nRecuerda lo muucho que te quiero ❤️.",
+		"desactivado": false,
+		"color": {
+			"id": 2,
+			"tipo": "Bryan",
+			"left_side": "#eecd7b",
+			"right_side": "#eecd7b",
+			"up_side": "#d4a733",
+			"down_side": "#d4a733",
+			"left_wing": "#F2F2F2",
+			"right_wing": "#F2F2F2",
+			"heart": "#4496ea"
+		},
+		"song": "Tú me cambiaste la vida",
+		"id": "4"
+	},
+	{
+		"createdAt": "2025-01-27T16:18:05.586Z",
+		"para": "Claudia la mejor cuñada",
+		"de": "Tu cuñado",
+		"izquierda": "Buenas Claudia espero qué te encuentres bien, lamento qué te encuentres enferma espero qué te mejores pronto del resfriado, solo tengo qué decir qué es un pésimo profesor por dejarte corriendo bajo la lluvia, espero que el karma le dé su merecido a ese \"profesor\". ",
+		"derecha": "Espero qué cuando vayas me cuentes historias y compartamos, jajaja qué molestemos a mi amorcito Lidia entre los dos por lo pequeñita qué es, de seguro es muy divertido compartir contigo, espero qué en tus estudios te vaya muy bien y también espero qué algún día encuentres un novio muy bueno y qué te trate bien qué es lo más importante jijij qué te recuperes muchos abrazos Claudia 🤗",
+		"desactivado": false,
+		"color": {
+			"id": 3,
+			"tipo": "Claudia",
+			"left_side": "#00AAE4",
+			"right_side": "#00AAE4",
+			"up_side": "#51D1F6",
+			"down_side": "#51D1F6",
+			"left_wing": "#F2F2F2",
+			"right_wing": "#F2F2F2",
+			"heart": "#ff4757"
+		},
+		"song": "Chk Chk Boom",
+		"id": "5"
+	},
+	{
+		"createdAt": "2025-02-13T16:18:07.745Z",
+		"para": "Mi Princesita",
+		"de": "Tú Principe",
+		"izquierda": "Feliz san Valentin mi princesita hermosa 👸🏼, qué sepas qué estoy muy feliz de tenerte en mi vida, desde que llegaste me he sentido muy querido y amado🥰, sé que estamos muy lejos pero aún asi espero que el día de hoy celebremos lo que sentimos, es algo muy bonito lo que estamos formando y valdra la espera te lo aseguro. ",
+		"derecha": "No me imagino los días sin ti, eres un solcito que ilumina mis días, me rio mucho contigo y espero que nunca olvides lo mucho que te quiero y que quiero estar contigo más que nada en este mundo y lo lograremos, te quiero mucho mi amor ❤️. Espero que ya haya llegado tu regalito jijiji ya no podre divertirme con pistas 🤪 jajaja ",
+		"desactivado": false,
+		"color": {
+			"id": 1,
+			"tipo": "Lidia",
+			"left_side": "#E0CEF2",
+			"right_side": "#E0CEF2",
+			"up_side": "#D7ADFF",
+			"down_side": "#D7ADFF",
+			"left_wing": "#F2F2F2",
+			"right_wing": "#F2F2F2",
+			"heart": "#ff4757"
+		},
+		"song": "Tú me cambiaste la vida",
+		"id": "6"
+	},
+	{
+		"createdAt": "2025-03-31T00:12:19.917Z",
+		"para": "Mi lady Lidia ❤",
+		"de": "Tu amorcito Bryan❤",
+		"izquierda": "Holaaa mi amor ❤, hoy es un día especial es el día que nació mi mimada princesita a la que quiero mucho y espero pasar muchos añitos demostrando lo mucho que te quiero cada día para lograr que me quieras con todito tu corazoncito 😊 y estes muy enamoradita de tu niño bonito 🤗.",
+		"derecha": "Eres una mujer increíble sé que eres muy capaz de ser la mejor, ya eres la dueña de mi corazoncito y me haces sentir muy querido es por eso que estoy muy feliz de haberte conocido y de todo el tiempo que hemos compartido, sé que estamos destinados a estar juntitos y lo lograremos y compartiremos nuestro amor, ¿por qué sabes? eres el amor de mi vida y siempre te estuve esperando mi princesita, te quiero mucho Feliz cumpleaños mi amor, mi princesita, mi mimada, mi cielito.",
+		"desactivado": false,
+		"color": {
+			"id": 1,
+			"tipo": "Lidia",
+			"left_side": "#E0CEF2",
+			"right_side": "#E0CEF2",
+			"up_side": "#D7ADFF",
+			"down_side": "#D7ADFF",
+			"left_wing": "#F2F2F2",
+			"right_wing": "#F2F2F2",
+			"heart": "#ff4757"
+		},
+		"song": "Sabes",
+		"id": "7"
+	},
+	{
+		"createdAt": "2025-03-31T07:23:38.029Z",
+		"para": "Mi princesita",
+		"de": "Tu enamoradito 😍",
+		"izquierda": "Estoy muy contento por este día, es tu cumpleaños y siempre agradeceré el que hayas llegado a mi vida, eres la chica que siempre busque y eres tal cual te imagine jijiji, me alegra mucho lo enamoradito que estamos mi amor. prometo siempre quererte y cuidarte ya que eres mi princesita mimada y eso no va a cambiar nunca.",
+		"derecha": "Te deseo un muy feliz cumpleaños y espero que veas lo mucho que te quiero, para mi eres super importante y me gusta verte feliz y hacerte sonreír, me gusta como eres, lo atenta, divertida y linda que eres conmigo, pienso en ti cuando quiero mi lugar seguro y espero ser el tuyo, el dónde pongas tu corazoncito y sea mimadito, jijiji eres una mimada, te amo mucho mi amor y te deseo un muy feliz cumpleaños",
+		"desactivado": false,
+		"color": {
+			"id": 1,
+			"tipo": "Lidia",
+			"left_side": "#E0CEF2",
+			"right_side": "#E0CEF2",
+			"up_side": "#D7ADFF",
+			"down_side": "#D7ADFF",
+			"left_wing": "#F2F2F2",
+			"right_wing": "#F2F2F2",
+			"heart": "#ff4757"
+		},
+		"song": "Sabes",
+		"id": "8"
+	},
+	{
+		"createdAt": "2025-04-06T22:38:45.183Z",
+		"para": "Mi viejito guapo ",
+		"de": "Tu canosa sucia favorita",
+		"izquierda": "Hola mi niño bonito 🥰 quería escribirte esta cartita para agradecerte todo lo bueno que haces por mí y lo increíble que eres conmigo. Me siento muy afortunada de tenerte. No podría elegir a alguien mejor que tú 💕.  Valoro mucho lo detallista que eres y el tiempo que me dedicas. ",
+		"derecha": "Me gusta cuando nos reímos de tonterías o cuando nos hacemos bromas que solo nosotros entendemos. Siento que todos los momentos que pasamos juntos son especiales porque tú los haces así, con tus palabras bonitas y tus bromas de viejito ingenioso. Espero que sigas queriéndome así de bonito por muuuuucho tiempo porque ya no me imagino estando sin ti ❤️ (además me debes una boda con un cura y medio 💍😏).\n\nTe quiero muchito ",
+		"desactivado": false,
+		"color": {
+			"id": 2,
+			"tipo": "Bryan",
+			"left_side": "#eecd7b",
+			"right_side": "#eecd7b",
+			"up_side": "#d4a733",
+			"down_side": "#d4a733",
+			"left_wing": "#F2F2F2",
+			"right_wing": "#F2F2F2",
+			"heart": "#4496ea"
+		},
+		"song": "Cásate Conmigo",
+		"id": "9"
+	},
+	{
+		"createdAt": "2025-07-23T11:16:10.820Z",
+		"para": "Clau 👸🏼",
+		"de": "Bryan 👱‍♂️",
+		"izquierda": "Hola Clau!!!, 🎉 hoy es un día especial 🎉, hoy celebramos tu cumpleaños 😜 espero que la pases muy bien hoy en tu día, te mereces un día muy feliz por lo buena e inteligente que eres, sé que te esfuerzas mucho.\nMe gustaría estar allá y acompañarte en tu cumpleaños, sé que lo pasaríamos bien los tres bromearíamos y reiríamos, seguro que fliparías con mi acento chileno e imitando el español.",
+		"derecha": "Espero que se cumplan todos tus deseos y te vaya muy bien en todo lo que te propongas, que sepas que eres la mejor y que lo importante es ser tú misma siempre, pase lo que pase y nunca fingir ser lo que no eres. Cuidar y tratar muy bonito a tu hermanita, aunque nunca está de más bromas con su altura 🤏🏼 ajajaja.\n\nTe deseo un Feliz cumpleaños y recuerda Clau ajjaj no enduendarte 👸🏼🎂🤗 y que eres la mejor ✨.",
+		"desactivado": false,
+		"color": {
+			"id": 3,
+			"tipo": "Claudia",
+			"left_side": "#00AAE4",
+			"right_side": "#00AAE4",
+			"up_side": "#51D1F6",
+			"down_side": "#51D1F6",
+			"left_wing": "#F2F2F2",
+			"right_wing": "#F2F2F2",
+			"heart": "#ff4757"
+		},
+		"song": "Stray Kids",
+		"id": "10"
+	},
+	{
+		"createdAt": "2025-07-23T21:15:26.854Z",
+		"para": "Lidia Bestie 👸",
+		"de": "Bryan Bestie 🤴",
+		"izquierda": "Hemos pasado por mucho, nos hemos divertido, hemos reído, hemos discutido, hemos solucionado. Siempre agradeceré a la vida el haberte conocido, me siento tan bien el compartir contigo, sin ti la vida pierde un poco su color, es que eres tan buen de verdad jajaja, mis ojos te ven de una forma tan especial, espero que lo sepas.",
+		"derecha": "Dentro de poco cumpliremos un año hablando, el tiempo paso volando, empezaras tu último año de estudio y estaré apoyándote con todo mi ser y corazón, para lo que necesites porque para eso estamos jejeje, te quiero mucho Bestie aunque prefieras a los argentinos antes que a mi jajajaj que mala eres y si yo puedo bromear con japonesas y tu no con argentinos :P, jaajja seguro flipas con esto último jajaja. ",
+		"desactivado": false,
+		"color": {
+			"id": 1,
+			"tipo": "Lidia",
+			"left_side": "#E0CEF2",
+			"right_side": "#E0CEF2",
+			"up_side": "#D7ADFF",
+			"down_side": "#D7ADFF",
+			"left_wing": "#F2F2F2",
+			"right_wing": "#F2F2F2",
+			"heart": "#ff4757"
+		},
+		"song": "Desde que te vi",
+		"id": "11"
+	},
+	{
+		"createdAt": "2025-07-24T00:02:26.926Z",
+		"para": "Lidiaaaaaaaaa",
+		"de": "Bryaaaaaaaaaan",
+		"izquierda": "Te quedaste dormida y me dejaste solito, siempre hago estas cositas cuando no estas, jajajaja seguro que lo haces a propósito para ver que hago, que buena canción que puse eh?, te gusta?, jajajajaja no es una indirecta ni nada 👀. pero a ver tus manos y tus ojitos!\n\nQue flipante ostia tío, ¡¡¡te extraño!!!, despiértate loca jajajaja que te hago cositas, bueno 2 cartitas está bien, hace tiempo que no te escribía jejeje.",
+		"derecha": "Antes te escribía para mimarte, ya no me pides que te escriba pipipi igual me gustaba escribirte con sentimiento, decirte algo bonito estaba bien, ahora solo enana y canosa jajajaja bueno siempre puedo escribirte una carta y decirte enana, de hecho, ahora sigo con eso.\n\n¿Como esta enana?, tanto tiempo que tal el clima en villa canas jajajajaja, más linda mi pequeña Lidia, la princesa, mi best bestie, espero leas es esta carta y flipes con lo que dice.",
+		"desactivado": false,
+		"color": {
+			"id": 1,
+			"tipo": "Lidia",
+			"left_side": "#E0CEF2",
+			"right_side": "#E0CEF2",
+			"up_side": "#D7ADFF",
+			"down_side": "#D7ADFF",
+			"left_wing": "#F2F2F2",
+			"right_wing": "#F2F2F2",
+			"heart": "#ff4757"
+		},
+		"song": "Caminar de tú mano",
+		"id": "12"
+	},
+	{
+		"createdAt": "2025-07-27T19:35:41.571Z",
+		"para": "Mi princesa",
+		"de": "Tu principe",
+		"izquierda": "Te escribo esta mini cartita, te conozco mañana a primera hora que puedas buscaras a ver si esta la cartita, bien enamoradita mi vida, digo mi Lidia jajajajaja. Espero que estes muy bien y que recuerdes lo mucho que te quiero y lo importante que eres para mí, pronto cumpliremos un añito juntitos y nos hemos divertido, nos hemos querido hemos visto cositas juntitos jijij.",
+		"derecha": "Serán muchos más años más los que compartiremos ya que no me imagino sin hablar contigo, estoy muy interesado en ti jejejej, es que eres muy divertida y me siento muy bien cuando comparto contigo, eres mi ángel que siempre me apoya y me saca una sonrisa, me encanta pasar el tiempo contigo, contarte que tal y despedirnos 1000 veces porque ninguno para de hablar jajajaj. recuerda que te quiero. molestar :P",
+		"desactivado": false,
+		"color": {
+			"id": 1,
+			"tipo": "Lidia",
+			"left_side": "#E0CEF2",
+			"right_side": "#E0CEF2",
+			"up_side": "#D7ADFF",
+			"down_side": "#D7ADFF",
+			"left_wing": "#F2F2F2",
+			"right_wing": "#F2F2F2",
+			"heart": "#ff4757"
+		},
+		"song": "Bésame",
+		"id": "13"
+	}
+]
