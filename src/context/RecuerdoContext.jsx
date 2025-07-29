@@ -1,203 +1,31 @@
 "use client";
+import axios from "axios";
+import _ from "lodash";
 import { createContext, useEffect, useState } from "react";
 export const RecuerdoContext = createContext();
 
 export const RecuerdoContextProvider = ({ children }) => {
   const [showRecuerdo, setShowRecuerdo] = useState(false);
-  const [flores, setFlores] = useState([
+  const [update, setUpdate] = useState(0);
+  const [loadingUpdate, setLoadingUpdate] = useState(false);
+  const [recuerdo, setRecuerdo] = useState({
+    tipo: "",
+    title: "",
+    recuerdo: "",
+    imagen: "",
+    color: "#ffffff",
+    dot_color: "#ffffff",
+  });
+  const [recuerdos, setRecuerdos] = useState([
     {
       id: 1,
       tipo: "flor3",
-      titulo: "Recuerdo 1",
+      title: "Recuerdo 1",
       recuerdo: "Había una vez que...",
       imagen:
         "https://drive.google.com/file/d/1BKbFk-A3Od9fUnh0Qd7nT9T9wVAeNMNm/view?usp=drive_link",
       color: "#f39c12",
       dot_color: "#ffffff",
-    },
-    {
-      id: 2,
-      tipo: "flor1",
-      titulo: "Recuerdo 2",
-      recuerdo: "Risas en el campo...",
-      imagen:
-        "https://drive.google.com/file/d/1ziwEXbxC1A3YgnJjCVbRzyjrKxPi450V/view?usp=drive_link",
-      color: "#4496ea",
-      dot_color: "#ffffff",
-    },
-    {
-      id: 3,
-      tipo: "flor5",
-      titulo: "Recuerdo 3",
-      recuerdo: "El cielo se pintó de rosa...",
-      imagen:
-        "https://drive.google.com/file/d/1P6e6MQQ5BbBqn_BbzKnaiFb5aX6BCV-t/view?usp=drive_link",
-      color: "#2ecc71",
-      dot_color: "#ffffff",
-    },
-    {
-      id: 4,
-      tipo: "flor2",
-      titulo: "Recuerdo 4",
-      recuerdo: "Canciones junto al fuego...",
-      imagen:
-        "https://drive.google.com/file/d/1xmvDFWFCek81WMJ1FULuqE2MMf1T6LLV/view?usp=drive_link",
-      color: "#ffec02",
-      dot_color: "#000000",
-    },
-    {
-      id: 5,
-      tipo: "flor6",
-      titulo: "Recuerdo 5",
-      recuerdo: "Un secreto entre amigos...",
-      imagen:
-        "https://drive.google.com/file/d/1Ce8j6tiAPQxanT7tmjQ-nzH8ZsMK8YST/view?usp=drive_link",
-      color: "#d35400",
-      dot_color: "#ffffff",
-    },
-    {
-      id: 6,
-      tipo: "flor4",
-      titulo: "Recuerdo 6",
-      recuerdo: "Dibujos en la arena...",
-      imagen: "/cuentos/cuento1/6.jpg",
-      color: "#6a0572",
-      dot_color: "#6a0572",
-    },
-    {
-      id: 7,
-      tipo: "flor1",
-      titulo: "Recuerdo 7",
-      recuerdo: "Historias bajo las estrellas...",
-      imagen: "/cuentos/cuento1/7.jpg",
-      color: "#9b59b6",
-      dot_color: "#ffffff",
-    },
-    {
-      id: 8,
-      tipo: "flor3",
-      titulo: "Recuerdo 8",
-      recuerdo: "La brisa del mar nos abrazaba...",
-      imagen: "/cuentos/cuento1/8.jpg",
-      color: "#1abc9c",
-      dot_color: "#ffffff",
-    },
-    {
-      id: 9,
-      tipo: "flor2",
-      titulo: "Recuerdo 9",
-      recuerdo: "Un abrazo cálido en invierno...",
-      imagen: "/cuentos/cuento1/9.jpg",
-      color: "#34495e",
-      dot_color: "#f1c40f",
-    },
-    {
-      id: 10,
-      tipo: "flor6",
-      titulo: "Recuerdo 10",
-      recuerdo: "Los cuentos del abuelo...",
-      imagen: "/cuentos/cuento1/10.jpg",
-      color: "#e84393",
-      dot_color: "#ffffff",
-    },
-    {
-      id: 11,
-      tipo: "flor5",
-      titulo: "Recuerdo 11",
-      recuerdo: "Una tarde en bicicleta...",
-      imagen: "/cuentos/cuento1/11.jpg",
-      color: "#2980b9",
-      dot_color: "#ffffff",
-    },
-    {
-      id: 12,
-      tipo: "flor3",
-      titulo: "Recuerdo 12",
-      recuerdo: "Nieve por primera vez...",
-      imagen: "/cuentos/cuento1/12.jpg",
-      color: "#c0392b",
-      dot_color: "#ffffff",
-    },
-    {
-      id: 13,
-      tipo: "flor4",
-      titulo: "Recuerdo 13",
-      recuerdo: "Tardes de lluvia y chocolate...",
-      imagen: "/cuentos/cuento1/13.jpg",
-      color: "#8e44ad",
-      dot_color: "#8e44ad",
-    },
-    {
-      id: 14,
-      tipo: "flor6",
-      titulo: "Recuerdo 14",
-      recuerdo: "Juegos en el parque...",
-      imagen: "/cuentos/cuento1/14.jpg",
-      color: "#e67e22",
-      dot_color: "#ffffff",
-    },
-    {
-      id: 15,
-      tipo: "flor1",
-      titulo: "Recuerdo 15",
-      recuerdo: "Dibujos en la pared de la escuela...",
-      imagen: "/cuentos/cuento1/15.jpg",
-      color: "#7f8c8d",
-      dot_color: "#ffffff",
-    },
-    {
-      id: 16,
-      tipo: "flor2",
-      titulo: "Recuerdo 16",
-      recuerdo: "La primera vez que vi el mar...",
-      imagen: "/cuentos/cuento1/16.jpg",
-      color: "#16a085",
-      dot_color: "#ffffff",
-    },
-    {
-      id: 17,
-      tipo: "flor5",
-      titulo: "Recuerdo 17",
-      recuerdo: "Un paseo por el bosque...",
-      imagen: "/cuentos/cuento1/17.jpg",
-      color: "#27ae60",
-      dot_color: "#ffffff",
-    },
-    {
-      id: 18,
-      tipo: "flor4",
-      titulo: "Recuerdo 18",
-      recuerdo: "La canción que siempre cantábamos...",
-      imagen: "/cuentos/cuento1/18.jpg",
-      color: "#f8c291",
-      dot_color: "#f8c291",
-    },
-    {
-      id: 19,
-      tipo: "flor3",
-      titulo: "Recuerdo 19",
-      recuerdo: "Una carta escrita a mano...",
-      imagen: "/cuentos/cuento1/19.jpg",
-      color: "#00cec9",
-      dot_color: "#ffffff",
-    },
-    {
-      id: 20,
-      tipo: "flor6",
-      titulo: "Recuerdo 20",
-      recuerdo: "Las luces de la feria brillaban tanto...",
-      imagen: "/cuentos/cuento1/20.jpg",
-      color: "#fd79a8",
-      dot_color: "#ffffff",
-    },
-    {
-      id: 21,
-      tipo: "flor2",
-      titulo: "Recuerdo 21",
-      recuerdo: "Saltando charcos después de la lluvia...",
-      imagen: "/cuentos/cuento1/21.jpg",
-      color: "#f1c40f",
-      dot_color: "#000000",
     },
   ]);
 
@@ -205,12 +33,268 @@ export const RecuerdoContextProvider = ({ children }) => {
     setShowRecuerdo(true);
   };
 
+  const postRecuerdo = async (newRecuerdo) =>
+    axios.post(
+      `https://678054ff85151f714b067e87.mockapi.io/recuerdo`,
+      JSON.stringify(newRecuerdo),
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+  const getAllRecuerdo = async () =>
+    axios.get(`https://678054ff85151f714b067e87.mockapi.io/recuerdo/`);
+
+  useEffect(() => {
+    getAllRecuerdo()
+      .then((res) => {
+        setRecuerdos(_.get(res, "data", []));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [update]);
+
+  const getRecuerdo = async (recuerdoId) =>
+    axios.get(
+      `https://678054ff85151f714b067e87.mockapi.io/recuerdo/${recuerdoId}`
+    );
+
+  const getByIdRecuerdo = async (recuerdoId) => {
+    setLoadingUpdate(true);
+    console.log(recuerdoId);
+
+    getRecuerdo(recuerdoId)
+      .then((res) => {
+        setRecuerdo(res.data);
+        handleChangeSong(_.get(res, "data.song", []));
+        setTimeout(() => {
+          setLoadingUpdate(false);
+        }, 100);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    postRecuerdo(recuerdo)
+      .then((res) => {
+        setUpdate((prev) => prev + 1);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const handleRefresh = (event) => {
+    event.preventDefault();
+    setUpdate((prev) => prev + 1);
+  };
+
+  const putRecuerdo = async (newRecuerdo) => {
+    axios.put(
+      `https://678054ff85151f714b067e87.mockapi.io/recuerdo/${newRecuerdo.id}`,
+      JSON.stringify(newRecuerdo),
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+  };
+
+  const handleUpdate = (event) => {
+    event.preventDefault();
+    putRecuerdo(recuerdo)
+      .then((res) => {
+        setRecuerdo(_.get(res, "data", []));
+        setUpdate((prev) => prev + 1);
+        setTimeout(() => {
+          setLoadingUpdate(false);
+        }, 100);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const deleteRecuerdo = async (recuerdoId) =>
+    axios.delete(
+      `https://678054ff85151f714b067e87.mockapi.io/recuerdo/${recuerdoId}`
+    );
+
+  const handleDelete = (e, recuerdoId) => {
+    e.preventDefault();
+    deleteRecuerdo(recuerdoId)
+      .then((res) => {
+        setUpdate((prev) => prev + 1);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const handleChange = (e) =>
+    setRecuerdo({ ...recuerdo, [e.target.name]: e.target.value });
+
+  const handleChangeforName = (name, e) =>
+    setRecuerdo({ ...recuerdo, [name]: e });
+
+  const [songs, setSongs] = useState([
+    { src: "/assets/Sabes.mp3", autor: "Reik", titulo: "Sabes" },
+    { src: "/assets/Solo_dia.mp3", autor: "Morat", titulo: "En un solo día" },
+    { src: "/assets/Amapolas.mp3", autor: "Leo Rizzi", titulo: "Amapolas" },
+    { src: "/assets/Besame.mp3", autor: "Camila", titulo: "Bésame" },
+
+    {
+      src: "/assets/Coleccionista.mp3",
+      autor: "Camila",
+      titulo: "Coleccionista de Canciones",
+    },
+    {
+      src: "/assets/Solo_para_ti.mp3",
+      autor: "Camila",
+      titulo: "Solo para ti",
+    },
+    {
+      src: "/assets/Caminar_Mano.mp3",
+      autor: " Rio Roma ft. Fonseca",
+      titulo: "Caminar de tú mano",
+    },
+    {
+      src: "/assets/Colgando.mp3",
+      autor: "Carlos Baute",
+      titulo: "Colgando en Tus Manos",
+    },
+    {
+      src: "/assets/Bonita.mp3",
+      autor: "Carlos Vives",
+      titulo: "Canción Bonita",
+    },
+    {
+      src: "/assets/Casate.mp3",
+      autor: "Silvestre Dangond",
+      titulo: "Cásate Conmigo",
+    },
+
+    {
+      src: "/assets/Enamore.mp3",
+      autor: "Chayanne",
+      titulo: "Me Enamoré De Ti",
+    },
+    {
+      src: "/assets/Esclavo.mp3",
+      autor: "David Bisbal",
+      titulo: "Esclavo De Sus Besos",
+    },
+    {
+      src: "/assets/Enamoro.mp3",
+      autor: "Enrique Iglesias",
+      titulo: "Cuando Me Enamoro",
+    },
+
+    { src: "/assets/Enamora.mp3", autor: "Juanes", titulo: "Me Enamora" },
+    {
+      src: "/assets/Muero.mp3",
+      autor: "La Quinta Estación",
+      titulo: "Me Muero",
+    },
+    {
+      src: "/assets/Destino.mp3",
+      autor: "Melendi",
+      titulo: "Destino o Casualidad",
+    },
+    { src: "/assets/Desde.mp3", autor: "Natalino", titulo: "Desde que te vi" },
+    {
+      src: "/assets/Cambiaste.mp3",
+      autor: "Río Roma",
+      titulo: "Tú me cambiaste la vida",
+    },
+    {
+      src: "/assets/Miedo.mp3",
+      autor: "Alex Ubago",
+      titulo: "Sin miedo a nada",
+    },
+    {
+      src: "/assets/Chk_Chk_Boom.mp3",
+      autor: "Stray Kids",
+      titulo: "Chk Chk Boom",
+    },
+    {
+      src: "/assets/StrayKids.mp3",
+      autor: "Stray Kids",
+      titulo: "Stray Kids",
+    },
+    {
+      src: "/assets/llegaste_tu.mp3",
+      autor: "Sin bandera",
+      titulo: "Y llegaste tú",
+    },
+  ]);
+
+  const [currentSongIndex, setCurrentSongIndex] = useState(0);
+
+  useEffect(() => {
+    setSongs((prevSongs) =>
+      [...prevSongs].sort((a, b) => a.titulo.localeCompare(b.titulo))
+    );
+  }, []);
+
+  const nextSong = () => {
+    setCurrentSongIndex((prevIndex) => (prevIndex + 1) % songs.length);
+  };
+
+  const prevSong = () => {
+    setCurrentSongIndex(
+      (prevIndex) => (prevIndex - 1 + songs.length) % songs.length
+    );
+  };
+
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * songs.length);
+    setCurrentSongIndex(randomIndex);
+  }, []);
+
+  const obtenerCancionPorNombre = (titulo) => {
+    const cancionEncontrada = songs.find(
+      (cancion) => cancion.titulo === titulo
+    );
+    return cancionEncontrada ? cancionEncontrada : null;
+  };
+
+  const handleSong = (titulo) => {
+    const cancion = obtenerCancionPorNombre(titulo);
+    setRecuerdo({ ...recuerdo, song: cancion.titulo });
+  };
+
+  const handleChangeSong = (titulo) => {
+    const idCancion = songs.findIndex((song) => song.titulo === titulo);
+    setCurrentSongIndex(idCancion);
+  };
+
   return (
     <RecuerdoContext.Provider
       value={{
         showRecuerdo,
         handleShowRecuerdo,
-        flores,
+        recuerdo,
+        recuerdos,
+        handleChange,
+        handleChangeforName,
+        handleSubmit,
+        getByIdRecuerdo,
+        loadingUpdate,
+        songs,
+        currentSongIndex,
+        nextSong,
+        prevSong,
+        handleSong,
+        handleChangeSong,
+        handleUpdate,
       }}
     >
       {children}

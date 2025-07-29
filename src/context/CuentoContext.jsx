@@ -50,8 +50,6 @@ export const CuentoContextProvider = ({ children }) => {
     setCuento(cuento);
   };
 
-  console.log(cuento);
-
   return (
     <CuentoContext.Provider
       value={{

@@ -87,6 +87,7 @@ module.exports = {
       },
       backgroundImage: {
         cuento: "url(/cuentos/portada.jpg)",
+        grass: "url(/grass.jpg)",
         dark: "url(/bgdark.jpg)",
         light: "url(/bglight.jpg)",
         work_project_bg_light: "url(/work/project-bg-light.png)",
