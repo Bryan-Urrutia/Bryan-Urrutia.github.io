@@ -276,6 +276,20 @@ export const RecuerdoContextProvider = ({ children }) => {
     setCurrentSongIndex(idCancion);
   };
 
+  const handleImageUpload = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onloadend = () => {
+      handleChangeforName("imagen", reader.result);
+      console.log(reader.result);
+    };
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  };
+
   return (
     <RecuerdoContext.Provider
       value={{
@@ -295,6 +309,7 @@ export const RecuerdoContextProvider = ({ children }) => {
         handleSong,
         handleChangeSong,
         handleUpdate,
+        handleImageUpload,
       }}
     >
       {children}

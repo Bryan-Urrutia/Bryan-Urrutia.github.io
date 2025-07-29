@@ -55,6 +55,7 @@ const Page = () => {
     handleChangeSong,
     songs,
     handleUpdate,
+    handleImageUpload,
   } = useContext(RecuerdoContext);
 
   return (
@@ -173,8 +174,8 @@ const Page = () => {
                   <Label htmlFor="imagen">imagen</Label>
                   <Input
                     name="imagen"
-                    placeholder="https://drive.google.com/file/d/1BKbFk-A3Od9fUnh0Qd7nT9T9wVAeNMNm/view?usp=drive_link"
-                    onChange={handleChange}
+                    onChange={handleImageUpload}
+                    type="file"
                     className="col-span-3"
                   />
                 </div>
@@ -330,9 +331,8 @@ const Page = () => {
                               <Label htmlFor="imagen">imagen</Label>
                               <Input
                                 name="imagen"
-                                placeholder="https://drive.google.com/file/d/1BKbFk-A3Od9fUnh0Qd7nT9T9wVAeNMNm/view?usp=drive_link"
-                                value={recuerdo.imagen || ""}
-                                onChange={handleChange}
+                                type="file"
+                                onChange={handleImageUpload}
                                 className="col-span-3"
                               />
                             </div>
@@ -813,25 +813,14 @@ const Page = () => {
                   </Button>
                   <h2 className="text-secondary select-none">Imagen</h2>
                   <div>
-                    {/* {flor.imagen?.includes(
-                      "https://drive.google.com/file/d/"
-                    ) ? (
+                    {flor.imagen && (
                       <img
-                        src={flor.imagen
-                          .replace(
-                            "https://drive.google.com/file/d/",
-                            "https://drive.google.com/thumbnail?id="
-                          )
-                          .replace("/view?usp=drive_link", "")}
+                        src={flor.imagen}
                         alt="Recuerdo"
                         width={300}
                         height="auto"
                       />
-                    ) : (
-                      <div className="text-gray-500 italic">
-                        Imagen no válida
-                      </div>
-                    )} */}
+                    )}
                   </div>
                 </div>
               </React.Fragment>
