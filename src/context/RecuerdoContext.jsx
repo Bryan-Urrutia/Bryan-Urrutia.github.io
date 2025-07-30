@@ -16,18 +16,7 @@ export const RecuerdoContextProvider = ({ children }) => {
     color: "#ffffff",
     dot_color: "#ffffff",
   });
-  const [recuerdos, setRecuerdos] = useState([
-    {
-      id: 1,
-      tipo: "flor3",
-      title: "Recuerdo 1",
-      recuerdo: "Había una vez que...",
-      imagen:
-        "https://drive.google.com/file/d/1BKbFk-A3Od9fUnh0Qd7nT9T9wVAeNMNm/view?usp=drive_link",
-      color: "#f39c12",
-      dot_color: "#ffffff",
-    },
-  ]);
+  const [recuerdos, setRecuerdos] = useState([null]);
 
   const handleShowRecuerdo = () => {
     setShowRecuerdo(true);
@@ -64,7 +53,6 @@ export const RecuerdoContextProvider = ({ children }) => {
 
   const getByIdRecuerdo = async (recuerdoId) => {
     setLoadingUpdate(true);
-    console.log(recuerdoId);
 
     getRecuerdo(recuerdoId)
       .then((res) => {
@@ -116,6 +104,7 @@ export const RecuerdoContextProvider = ({ children }) => {
         setTimeout(() => {
           setLoadingUpdate(false);
         }, 100);
+        handleRefresh(event);
       })
       .catch((err) => {
         console.log(err);

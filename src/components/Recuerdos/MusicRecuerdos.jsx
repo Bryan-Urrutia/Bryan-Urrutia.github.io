@@ -22,7 +22,7 @@ const Music = () => {
     useContext(RecuerdoContext);
 
   return (
-    <div className="fixed w-full bg-gradient-to-r from-green-800/70 to-white/10 backdrop-blur-[5px] bottom-0 left-0">
+    <div className="fixed w-full bg-gradient-to-r from-green-800/70 to-white/10 backdrop-blur-[5px] bottom-0 left-0 z-50">
       <div className="flex justify-center items-center w-full">
         <div className="hidden w-[300px] xl:flex items-center gap-x-4">
           <div className="relative w-16 h-16">
