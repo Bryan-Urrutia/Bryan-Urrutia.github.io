@@ -22,8 +22,8 @@ export const RecuerdoContextProvider = ({ children }) => {
     setShowRecuerdo(true);
   };
 
-  const postRecuerdo = async (newRecuerdo) =>
-    axios.post(
+  const postRecuerdo = async (newRecuerdo) => {
+    return axios.post(
       `https://678054ff85151f714b067e87.mockapi.io/recuerdo`,
       JSON.stringify(newRecuerdo),
       {
@@ -32,6 +32,7 @@ export const RecuerdoContextProvider = ({ children }) => {
         },
       }
     );
+  };
 
   const getAllRecuerdo = async () =>
     axios.get(`https://678054ff85151f714b067e87.mockapi.io/recuerdo/`);
@@ -67,15 +68,14 @@ export const RecuerdoContextProvider = ({ children }) => {
       });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    postRecuerdo(recuerdo)
-      .then((res) => {
-        setUpdate((prev) => prev + 1);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    try {
+      await postRecuerdo(recuerdo); // ✅ Espera a que termine
+      setUpdate((prev) => prev + 1);
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   const handleRefresh = (event) => {
@@ -84,7 +84,7 @@ export const RecuerdoContextProvider = ({ children }) => {
   };
 
   const putRecuerdo = async (newRecuerdo) => {
-    axios.put(
+    return axios.put(
       `https://678054ff85151f714b067e87.mockapi.io/recuerdo/${newRecuerdo.id}`,
       JSON.stringify(newRecuerdo),
       {
@@ -95,22 +95,17 @@ export const RecuerdoContextProvider = ({ children }) => {
     );
   };
 
-  const handleUpdate = (event) => {
+  const handleUpdate = async (event) => {
     event.preventDefault();
-    putRecuerdo(recuerdo)
-      .then((res) => {
-        setRecuerdo(_.get(res, "data", []));
-        setUpdate((prev) => prev + 1);
-        setTimeout(() => {
-          setLoadingUpdate(false);
-        }, 100);
-        handleRefresh(event);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    try {
+      const res = await putRecuerdo(recuerdo); // ✅ Espera a que termine
+      setRecuerdo(_.get(res, "data", []));
+      setUpdate((prev) => prev + 1);
+      setLoadingUpdate(false);
+    } catch (err) {
+      console.error(err);
+    }
   };
-
   const deleteRecuerdo = async (recuerdoId) =>
     axios.delete(
       `https://678054ff85151f714b067e87.mockapi.io/recuerdo/${recuerdoId}`
@@ -299,6 +294,48 @@ export const RecuerdoContextProvider = ({ children }) => {
     reader.readAsDataURL(file);
   };
 
+  const [selectedFlorId, setSelectedFlorId] = useState(null); // null = mostrar todas
+
+  const handleFlorClick = (id) => {
+    setSelectedFlorId((prevId) => {
+      const newId = prevId === id ? null : id;
+
+      setTimeout(() => {
+        // Quitar la clase del anterior (si existía)
+        if (prevId !== null) {
+          const prevElemLeft = document.getElementById(
+            `recuerdo-left-${prevId}`
+          );
+          if (prevElemLeft) {
+            prevElemLeft.classList.remove("visible");
+          }
+          const prevElemRight = document.getElementById(
+            `recuerdo-right-${prevId}`
+          );
+          if (prevElemRight) {
+            prevElemRight.classList.remove("visible");
+          }
+        }
+
+        // Agregar clase al nuevo (si hay uno nuevo)
+        if (newId !== null) {
+          const newElemLeft = document.getElementById(`recuerdo-left-${newId}`);
+          if (newElemLeft) {
+            newElemLeft.classList.add("visible");
+          }
+          const newElemRight = document.getElementById(
+            `recuerdo-right-${newId}`
+          );
+          if (newElemRight) {
+            newElemRight.classList.add("visible");
+          }
+        }
+      }, 100);
+
+      return newId;
+    });
+  };
+
   return (
     <RecuerdoContext.Provider
       value={{
@@ -319,6 +356,8 @@ export const RecuerdoContextProvider = ({ children }) => {
         handleChangeSong,
         handleUpdate,
         handleImageUpload,
+        handleFlorClick,
+        selectedFlorId,
       }}
     >
       {children}

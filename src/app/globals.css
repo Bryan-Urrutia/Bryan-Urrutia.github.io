@@ -327,7 +327,7 @@
   background: linear-gradient(-90deg, #fff, #fff 40%, #f0f0f0);
 }
 
-#recuerdo h2 {
+.recuerdo h2 {
   font-size: 3em;
   margin: 0;
   color: pink;
@@ -339,7 +339,7 @@
   color: pink !important;
 }
 
-#recuerdo p {
+.recuerdo p {
   font-size: 1.7em;
   text-align: justify;
   padding-left: 30px;
@@ -707,4 +707,12 @@
 
 body{
   background-image: url('/grass.jpg');
+}
+
+.elemento{
+  opacity: 0;
+}
+
+.elemento.visible{
+  opacity: 1;
 }
