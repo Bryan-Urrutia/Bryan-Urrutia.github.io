@@ -5,7 +5,7 @@ import ListCuentos from "@/components/Cuento/ListCuento";
 
 const Page = () => {
   return (
-    <section className="bg-light dark:bg-dark min-h-screen bg-no-repeat bg-center bg-cover bg-fixed w-full flex justify-center">
+    <section className="min-h-screen w-full flex justify-center">
       <CuentoContextProvider>
         <Cuento />
         <ListCuentos />
