@@ -4,10 +4,10 @@ import "./globals.css";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
 import { ThemeProvider } from "@/components/theme-provider";
-import Script from "next/script";
 import Music from "@/components/Music";
 import { MusicContextProvider } from "@/context/MusicaContext";
 import { Toaster } from "sonner";
+import Effects from "@/components/Effects";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -60,14 +60,7 @@ export default function RootLayout({
 						</MusicContextProvider>
 					</SidebarProvider>
 				</ThemeProvider>
-				<Script
-					src="https://app.embed.im/snow.js"
-					strategy="afterInteractive"
-				/>
-				<Script
-					src="https://app.embed.im/sparkles.js"
-					strategy="afterInteractive"
-				/>
+				<Effects />
 			</body>
 		</html>
 
