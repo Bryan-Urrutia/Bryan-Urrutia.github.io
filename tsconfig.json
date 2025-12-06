@@ -32,6 +32,6 @@
   ],
   "exclude": ["node_modules"],
   "backgroundImage": {
-    "pared": "url(/image/Pared.png)",
+    "pared": "url(/image/Pared.webp)",
   }
 }

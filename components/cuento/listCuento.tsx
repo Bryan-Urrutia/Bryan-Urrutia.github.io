@@ -52,7 +52,7 @@ export default function ListCuentos() {
 									<CardContent className="relative w-4/5 h-64 bg-pink-50 border border-pink-200 rounded-xl overflow-hidden shadow-inner">
 										<Image
 											alt="Portada"
-											src="/image/nosotros1.png"
+											src="/image/nosotros1.webp"
 											fill
 											className="object-cover"
 										/>
@@ -69,7 +69,7 @@ export default function ListCuentos() {
 
 							</DialogTrigger>
 
-							<DialogContent className="h-screen min-w-12/12 m-0 p-0 bg-[url('/image/mesa.png')]">
+							<DialogContent className="h-screen min-w-12/12 m-0 p-0 bg-[url('/image/mesa.webp')]">
 								<ScrollArea className='flex h-full flex-col overflow-hidden w-full'>
 
 									<DialogHeader>
@@ -78,7 +78,7 @@ export default function ListCuentos() {
 									<div className="hidden xl:flex h-full w-full justify-center items-start relative">
 										<div className="h-[88%] w-full relative bg-red-400 overflow-hidden">
 											<img
-												src={'/image/mesa.png'}
+												src={'/image/mesa.webp'}
 												alt={'mesa'}
 												className="aspect-video h-full w-full object-fill"
 											/>
@@ -102,7 +102,7 @@ export default function ListCuentos() {
 																<CardContent className="relative w-4/5 h-96 bg-pink-50 border border-pink-200 rounded-xl overflow-hidden shadow-inner">
 																	<Image
 																		alt="Portada"
-																		src="/image/nosotros1.png"
+																		src="/image/nosotros1.webp"
 																		fill
 																		className="object-cover"
 																	/>

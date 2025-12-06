@@ -53,7 +53,7 @@ export default function ListRecuerdos() {
 						</Card>
 					</DialogTrigger>
 
-					<DialogContent className="h-screen min-w-12/12 m-0 p-0 border-none bg-[url('/image/Pared.png')]">
+					<DialogContent className="h-screen min-w-12/12 m-0 p-0 border-none bg-[url('/image/Pared.webp')]">
 						<ScrollArea className='flex max-h-full relative flex-col overflow-hidden'>
 							<DialogHeader>
 								<DialogTitle></DialogTitle>

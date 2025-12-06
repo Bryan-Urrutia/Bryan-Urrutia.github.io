@@ -10,8 +10,8 @@ import {
 import Link from "next/link"
 
 const CardMenu = ({
-	p_imagen = "/image/default.png",
-	p_nosotros = '/image/default.png',
+	p_imagen = "/image/default.webp",
+	p_nosotros = '/image/default.webp',
 	p_titulo = 'Titulo',
 	p_descripcion = 'Descripción',
 	p_ruta = '/'

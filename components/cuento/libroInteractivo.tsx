@@ -155,7 +155,7 @@ const LibroInteractivo = ({ paginas, color = "#000" }: LibroProps) => {
 											<CardContent className="relative w-4/5 h-96 bg-pink-50 border border-pink-200 rounded-xl overflow-hidden shadow-inner">
 												<Image
 													alt="Portada"
-													src="/image/nosotros1.png"
+													src="/image/nosotros1.webp"
 													fill
 													className="object-cover"
 												/>

@@ -105,7 +105,7 @@ const ListCartas = () => {
 												>
 													{estilo && <>
 														<Image
-															src={`/image/carta${estilo.replace(/\s+/g, '')}.png`}
+															src={`/image/carta${estilo.replace(/\s+/g, '')}.webp`}
 															alt="test"
 															fill
 															className="object-cover border-4 border-yellow-500 shadow-[0_0_15px_3px_rgba(255,215,0,0.8)]"
@@ -217,7 +217,7 @@ const ListCartas = () => {
 													className="relative border-2 h-full w-full"
 												>
 													<Image
-														src={`/image/carta${carta?.color?.tipo}.png`}
+														src={`/image/carta${carta?.color?.tipo}.webp`}
 														alt="test"
 														fill
 														className="object-cover border-4 border-yellow-500 shadow-[0_0_15px_3px_rgba(255,215,0,0.8)]"
