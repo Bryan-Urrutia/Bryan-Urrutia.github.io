@@ -1,23 +1,27 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Script from "next/script";
+import { useEffect } from "react";
 
 export default function Effects() {
-  const [isMobile, setIsMobile] = useState(false);
-
   useEffect(() => {
     const ua = navigator.userAgent.toLowerCase();
-    const mobile = /iphone|android|ipad|mobile/.test(ua);
-    setIsMobile(mobile);
+    const isMobile = /iphone|android|ipad|mobile/.test(ua);
+
+    if (isMobile) return;
+
+    const snow = document.createElement("script");
+    snow.src = "https://app.embed.im/snow.js";
+    document.body.appendChild(snow);
+
+    const sparkles = document.createElement("script");
+    sparkles.src = "https://app.embed.im/sparkles.js";
+    document.body.appendChild(sparkles);
+
+    return () => {
+      snow.remove();
+      sparkles.remove();
+    };
   }, []);
 
-  if (isMobile) return null;
-
-  return (
-    <>
-      <Script src="https://app.embed.im/snow.js" strategy="afterInteractive" />
-      <Script src="https://app.embed.im/sparkles.js" strategy="afterInteractive" />
-    </>
-  );
+  return null;
 }
