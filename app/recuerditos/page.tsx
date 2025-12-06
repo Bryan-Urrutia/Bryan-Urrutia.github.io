@@ -1,5 +1,6 @@
 import CardMenu from "@/components/card-demo"
 import Flores from "@/components/cartas/flores"
+import AddRecuerdo from "@/components/recuerdos/addRecuerdo"
 import ListRecuerdos from "@/components/recuerdos/listRecuerdos"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { RecuerdoContextProvider } from "@/context/RecuerdoContext"
@@ -103,6 +104,7 @@ export default function Home() {
 					</CardContent>
 				</Card>
 				*/}
+				<AddRecuerdo />
 				<ListRecuerdos />
 			</main>
 		</RecuerdoContextProvider>

@@ -98,7 +98,6 @@ const AddCartaForm = () => {
 			...data,
 		};
 
-
 		postCarta(nuevaCarta);
 
 		setShowModal(false);

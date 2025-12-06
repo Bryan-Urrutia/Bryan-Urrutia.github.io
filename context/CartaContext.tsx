@@ -52,7 +52,6 @@ export const CartaContext = createContext<CartaContextType | null>(null);
 export const CartaContextProvider = ({ children }: { children: React.ReactNode }) => {
 	const [showModal, setShowModal] = useState(false);
 	const [estilo, setEstilo] = useState('');
-	console.log(`/image/carta${estilo.replace(/\s+/g, '')}.webp`);
 	
 	const [loadingCarta, setLoadingCarta] = useState(false);
 
@@ -212,7 +211,7 @@ export const CartaContextProvider = ({ children }: { children: React.ReactNode }
 
 	const postCarta = async (carta: Carta) => {
 		const { data, error } = await supabase
-			.from("Cartahgfz")
+			.from("Carta")
 			.insert([
 				{
 					de: carta.de,
@@ -238,7 +237,7 @@ export const CartaContextProvider = ({ children }: { children: React.ReactNode }
 	const getCarta = async (cartaId: any) => {
 		setLoadingCarta(false);
 		const { data, error } = await supabase
-			.from("Cartahgfz")
+			.from("Carta")
 			.select()
 			.eq("id", cartaId)
 			.single()
@@ -269,7 +268,7 @@ export const CartaContextProvider = ({ children }: { children: React.ReactNode }
 		console.log(carta);
 
 		const { data, error } = await supabase
-			.from("Cartahgfz")
+			.from("Carta")
 			.update([
 				{
 					de: carta.de,
@@ -313,7 +312,7 @@ export const CartaContextProvider = ({ children }: { children: React.ReactNode }
 	useEffect(() => {
 		const getAllCarta = async () => {
 			const { data, error } = await supabase
-				.from('Cartahgfz')
+				.from('Carta')
 				.select()
 
 			if (data) {
