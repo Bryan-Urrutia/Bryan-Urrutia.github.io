@@ -62,7 +62,7 @@ export default function ListRecuerdos() {
 								<div className="grid grid-cols-1 gap-y-10 md:grid-cols-2 xl:grid-cols-3 justify-center items-center p-5 w-full relative scroll-auto">
 									<div className="flex flex-col justify-center items-center">
 										<Card
-											className="w-96 h-[30rem] bg-white shadow-xl rounded-none flex flex-col p-4 "
+											className="w-96 h-[32rem] bg-white shadow-xl rounded-none flex flex-col p-4 mx-5"
 										>
 											<CardContent className="relative w-full h-8/12 bg-gray-400 rounded-none overflow-hidden">
 												<Image
@@ -116,8 +116,8 @@ export default function ListRecuerdos() {
 											</div>
 										</CardContent>
 									</Card>
-									<div className="flex flex-col justify-center items-center mx-10">
-										<Card className="h-fit w-[420px] border-4 bg-pink-50 border-pink-200 rounded-lg flex flex-col items-center p-6 relative my-10">
+									<div className="flex flex-col justify-center items-center">
+										<Card className="h-fit w-96 lg:w-[420px] border-4 bg-pink-50 border-pink-200 rounded-lg flex flex-col items-center p-6 relative my-10">
 											<CardTitle>
 												<p className="text-center font-bold font-sacramento text-5xl">{item.title}</p>
 											</CardTitle>

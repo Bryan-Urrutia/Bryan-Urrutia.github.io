@@ -30,7 +30,7 @@ export default function ListCuentos() {
 	} = cuento;
 
 	return (
-		<div className="flex flex-col lg:grid md:grid-cols-2 xl:grid-cols-3 lg:gap-x-20 gap-y-10">
+		<div className="flex flex-col justify-center items-center lg:grid lg:grid-cols-2 xl:grid-cols-3 lg:gap-x-20 gap-y-10 px-5">
 			{cuentos
 				.filter(c => c.paginas?.[0]) // solo cuentos con página 0
 				.map((c, i) => {
@@ -41,7 +41,7 @@ export default function ListCuentos() {
 							<DialogTrigger asChild>
 								<Card
 									key={i}
-									className="h-[550px] w-[420px] select-none shadow-xl border-4 bg-pink-50 border-pink-200 rounded-lg flex flex-col items-center p-6 relative"
+									className="h-[550px] select-none shadow-xl border-4 bg-pink-50 border-pink-200 rounded-lg flex flex-col items-center p-6 relative"
 								>
 									<div className="absolute inset-4 border-2 border-pink-300 rounded-lg pointer-events-none"></div>
 
@@ -49,7 +49,7 @@ export default function ListCuentos() {
 										{front}
 									</CardTitle>
 
-									<CardContent className="relative w-4/5 h-64 bg-pink-50 border border-pink-200 rounded-xl overflow-hidden shadow-inner">
+									<CardContent className="relative w-full h-64 bg-pink-50 border border-pink-200 rounded-xl overflow-hidden shadow-inner">
 										<Image
 											alt="Portada"
 											src="/image/nosotros1.webp"
@@ -70,7 +70,7 @@ export default function ListCuentos() {
 							</DialogTrigger>
 
 							<DialogContent className="h-screen min-w-12/12 m-0 p-0 bg-[url('/image/mesa.webp')]">
-								<ScrollArea className='flex h-full flex-col overflow-hidden w-full'>
+								<ScrollArea className='flex h-full flex-col overflow-hidden w-12/12'>
 
 									<DialogHeader>
 										<DialogTitle></DialogTitle>
@@ -87,19 +87,19 @@ export default function ListCuentos() {
 											{/* <LibroInteractivo paginas={c.paginas} color={c?.color} /> */}
 										</div>
 									</div>
-									<div className="flex flex-col justify-center items-center xl:hidden">
+									<div className="flex flex-col w-full justify-center items-center xl:hidden">
 										{c.paginas.map(([front, back], i) => (
-											<div key={i} className="px-10">
+											<div key={i} className="w-full flex-flex-col justify-center items-center px-5">
 												<div
 												>
 													{i === 0 ? (
 														<>
-															<Card className="h-[550px] w-[420px] border-4 bg-pink-50 border-pink-200 rounded-lg flex flex-col items-center p-6 relative my-10">
+															<Card className="min-h-[550px] max-h-fit w-full border-4 bg-pink-50 border-pink-200 rounded-lg flex flex-col items-center p-6 relative my-10 gap-0">
 																<div className="absolute inset-4 border-2 border-pink-300 rounded-lg pointer-events-none"></div>
 																<CardTitle className="text-center text-5xl font-sacramento font-bold mt-2 mb-4">
 																	{front}
 																</CardTitle>
-																<CardContent className="relative w-4/5 h-96 bg-pink-50 border border-pink-200 rounded-xl overflow-hidden shadow-inner">
+																<CardContent className="relative w-full h-96 bg-pink-50 border border-pink-200 rounded-xl overflow-hidden shadow-inner">
 																	<Image
 																		alt="Portada"
 																		src="/image/nosotros1.webp"
@@ -116,7 +116,7 @@ export default function ListCuentos() {
 															</Card>
 														</>
 													) : (
-														<Card className="h-[550px] w-[420px] border-4 bg-pink-50 border-pink-200 rounded-lg flex flex-col items-center p-6 relative my-10">
+														<Card className="min-h-[550px] max-h-fit w-full border-4 bg-pink-50 border-pink-200 rounded-lg flex flex-col items-center p-6 relative my-10">
 															<CardContent
 																className="bg-white border-2 h-full border-pink-300 rounded-lg pointer-events-none text-justify p-1"
 															>
@@ -129,11 +129,11 @@ export default function ListCuentos() {
 												<div
 												>
 													{i === c.paginas.length - 1 ? (
-														<Card className="h-[550px] w-[420px] border-4 bg-pink-50 border-pink-200 rounded-lg flex flex-col items-center p-6 relative my-10">
+														<Card className="min-h-[550px] max-h-fit border-4 bg-pink-50 border-pink-200 rounded-lg flex flex-col items-center p-6 relative my-10">
 															<div className="absolute inset-4 border-2 border-pink-300 rounded-lg pointer-events-none"></div>
 														</Card>
 													) : (
-														<Card className="h-[550px] w-[420px] border-4 bg-pink-50 border-pink-200 rounded-lg flex flex-col items-center p-6 relative my-10">
+														<Card className="min-h-[550px] max-h-fit border-4 bg-pink-50 border-pink-200 rounded-lg flex flex-col items-center p-6 relative my-10">
 															<CardContent
 																className="bg-white border-2 h-full border-pink-300 rounded-lg pointer-events-none text-justify p-1"
 															>
