@@ -52,7 +52,7 @@ const AddCarta = () => {
 					<ScrollArea className='flex max-h-full relative flex-col overflow-hidden w-full'>
 
 						<DialogTitle className='hidden'></DialogTitle>
-						<div className='w-full grid grid-cols-1 lg:grid-cols-3 justify-center px-10 gap-10'>
+						<div className='w-full flex flex-col h-screen pt-10 mb-10 md:grid lg:grid-cols-3 justify-center px-10 gap-10'>
 							<Card className="h-fit col-span-2 border-4 bg-pink-50 border-pink-200 rounded-lg flex flex-col items-center p-6 relative my-10">
 								<CardContent
 									className="bg-white border-2 h-full w-full border-pink-300 rounded-lg text-justify px-4"
@@ -61,7 +61,7 @@ const AddCarta = () => {
 									<AddCartaForm />
 								</CardContent>
 							</Card>
-							<Card className=" h-[650px] sticky top-0 hidden border-4 bg-pink-50 border-pink-200 rounded-lg lg:flex flex-col items-center p-6  my-10">
+							<Card className="h-full md:h-[650px] sticky top-0 hidden border-4 bg-pink-50 border-pink-200 rounded-lg lg:flex flex-col items-center justify-between p-6  my-10">
 								<CardContent
 									className="relative border-2 h-full w-full"
 								>

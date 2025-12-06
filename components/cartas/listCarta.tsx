@@ -212,7 +212,7 @@ const ListCartas = () => {
 														<div className="w-40 h-40 rounded-full bg-white shadow-[0_0_40px_20px_rgba(255,255,255,0.8)]"></div>
 													</div>
 												</PopoverTrigger>
-												<PopoverContent className='z-50 data-[state=open]:!zoom-in-0 data-[state=closed]:!zoom-out-0 origin-top duration-400 h-[500px] w-96 border-4 bg-pink-50 border-pink-200 rounded-lg lg:flex flex-col items-center p-6 relative my-10'>
+												<PopoverContent className='z-50 data-[state=open]:!zoom-in-0 data-[state=closed]:!zoom-out-0 origin-top duration-400 h-[500px] w-96 -left-5 border-4 bg-pink-50 border-pink-200 rounded-lg lg:flex flex-col items-center p-6 relative my-10'>
 													<CardContent
 														className="relative border-2 h-full w-full"
 													>
@@ -251,16 +251,16 @@ const ListCartas = () => {
 													)
 												})}
 											</div>
-											<div className="grid grid-cols-1  py-7 lg:pt-10 lg:grid-cols-4 justify-evenly items-center w-full relative scroll-auto z-40">
+											<div className="grid grid-cols-1 py-7 p-4 lg:p-0 lg:pt-10 lg:grid-cols-4 justify-evenly items-center w-full relative scroll-auto z-40">
 												<Flores />
-												<div className="flex-col gap-y-10 lg:gap-y-0 lg:flex-row h-fit lg:h-[500px] w-full col-span-2 my-5 mx-auto items-center lg:items-stretch flex relative mt-0 lg:mt-20">
-													<div className="bg-[#eee] p-3 rounded-tr-2xl h-fit lg:h-full w-[420px] rounded-bl-2xl transform-none lg:[transform:skew(10deg,20deg)] lg:w-[360px]">
+												<div className="flex-col gap-y-10 lg:gap-y-0 lg:flex-row h-fit lg:h-[500px] w-min-[420px] w-full col-span-2 my-5 mx-auto items-center lg:items-stretch flex relative mt-0 lg:mt-20">
+													<div className="bg-[#eee] p-3 rounded-tr-2xl h-fit lg:h-full w-fit rounded-bl-2xl transform-none lg:[transform:skew(10deg,20deg)] lg:w-[360px]">
 														<h2 className="select-none text-4xl text-pink-300 text-center font-sacramento font-bold">{carta.de}</h2>
 														<p className="pt-[0.1rem] select-none text-3xl text-justify text-primary dark:text-black px-2 font-sacramento">
 															{carta.izquierda}
 														</p>
 													</div>
-													<div className="bg-[#eee] p-3 rounded-tl-2xl h-fit lg:h-full rounded-br-2xl transform-none lg:[transform:skew(10deg,-15deg)] w-[420px] -right-4 top-[9px] lg:absolute mb-10 lg:mt-0">
+													<div className="bg-[#eee] p-3 rounded-tl-2xl h-fit lg:h-full rounded-br-2xl transform-none lg:[transform:skew(10deg,-15deg)] w-min-[420px] lg:w-[420px] -right-4 top-[9px] lg:absolute mb-10 lg:mt-0">
 														<p className="py-3 select-none text-3xl text-justify dark:text-black text-primary px-2 font-sacramento">
 															{carta.derecha}
 														</p>
