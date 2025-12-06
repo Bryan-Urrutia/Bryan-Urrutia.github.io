@@ -84,7 +84,7 @@ export default function ListCuentos() {
 											/>
 										</div>
 										<div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2">
-											<LibroInteractivo paginas={c.paginas} color={c?.color} />
+											{/* <LibroInteractivo paginas={c.paginas} color={c?.color} /> */}
 										</div>
 									</div>
 									<div className="flex flex-col justify-center items-center xl:hidden">
