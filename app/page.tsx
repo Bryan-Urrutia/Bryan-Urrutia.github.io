@@ -16,22 +16,22 @@ export default function Home() {
 
 			<div className="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-10">
 				<CardMenu
-					p_imagen="/image/Letter.png"
-					p_nosotros="/image/nosotros1.png"
+					p_imagen="/image/Letter.webp"
+					p_nosotros="/image/nosotros1.webp"
 					p_titulo="Cartitas"
 					p_descripcion="Mensajitos especiales para dedicar a esa persona que hace latir tu corazón."
 					p_ruta="/cartitas"
 				/>
 				<CardMenu
-					p_imagen="/image/Book.png"
-					p_nosotros="/image/nosotros2.png"
+					p_imagen="/image/Book.webp"
+					p_nosotros="/image/nosotros2.webp"
 					p_titulo="Cuentitos"
 					p_descripcion="Crea historias únicas para compartir momentos mágicos juntos."
 					p_ruta="/cuentitos"
 				/>
 				<CardMenu
-					p_imagen="/image/Polaroid.png"
-					p_nosotros="/image/nosotros3.png"
+					p_imagen="/image/Polaroid.webp"
+					p_nosotros="/image/nosotros3.webp"
 					p_titulo="Recuerditos"
 					p_descripcion="Instantes guardados con cariño, para volver a enamorarnos cada vez."
 					p_ruta="/recuerditos"
