@@ -76,7 +76,7 @@ export default function ListCuentos() {
 										<DialogTitle></DialogTitle>
 									</DialogHeader>
 									<div className="hidden xl:flex h-full w-full justify-center items-start relative">
-										<div className="h-[88%] w-full relative bg-red-400 overflow-hidden">
+										<div className="h-[88%] w-full relative overflow-hidden">
 											<img
 												src={'/image/mesa.webp'}
 												alt={'mesa'}
@@ -89,7 +89,7 @@ export default function ListCuentos() {
 									</div>
 									<div className="flex flex-col justify-center items-center xl:hidden">
 										{c.paginas.map(([front, back], i) => (
-											<div key={i}>
+											<div key={i} className="px-10">
 												<div
 												>
 													{i === 0 ? (

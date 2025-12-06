@@ -31,7 +31,7 @@ export default function ListRecuerdos() {
 	} = recuerdo;
 
 	return (
-		<div className="flex flex-col sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 justify-center items-center gap-x-20 gap-y-10">
+		<div className="flex flex-col sm:grid  xl:grid-cols-3 justify-center items-center gap-x-20 gap-y-10 px-10 mx-10">
 			{recuerdos.map((item, i) => (
 				<Dialog key={i}>
 					<DialogTrigger asChild>
@@ -53,7 +53,7 @@ export default function ListRecuerdos() {
 						</Card>
 					</DialogTrigger>
 
-					<DialogContent className="h-screen min-w-12/12 m-0 p-0 border-none bg-[url('/image/Pared.webp')]">
+					<DialogContent className="h-screen min-w-12/12 m-0 p-0 border-none bg-[url('/image/Pared.png')]">
 						<ScrollArea className='flex max-h-full relative flex-col overflow-hidden'>
 							<DialogHeader>
 								<DialogTitle></DialogTitle>
@@ -116,7 +116,7 @@ export default function ListRecuerdos() {
 											</div>
 										</CardContent>
 									</Card>
-									<div className="flex flex-col justify-center items-center">
+									<div className="flex flex-col justify-center items-center mx-10">
 										<Card className="h-fit w-[420px] border-4 bg-pink-50 border-pink-200 rounded-lg flex flex-col items-center p-6 relative my-10">
 											<CardTitle>
 												<p className="text-center font-bold font-sacramento text-5xl">{item.title}</p>

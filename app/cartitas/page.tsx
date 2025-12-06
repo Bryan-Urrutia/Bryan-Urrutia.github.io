@@ -8,7 +8,7 @@ import { CartaContextProvider } from "@/context/CartaContext";
 export default function Home() {
 	return (
 		<CartaContextProvider>
-			<main className="min-h-screen flex-1 flex-col gap-10 w-full items-center justify-center px-16 sm:items-start">
+				<main className="min-h-screen flex-1 flex-col gap-10 w-full items-center justify-center px-0 sm:px-16 sm:items-start">
 				<h1 className="
 						text-7xl md:text-8xl font-extrabold text-center pt-4
 						bg-gradient-to-r from-rose-400 via-pink-500 to-violet-600

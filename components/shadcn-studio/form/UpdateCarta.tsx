@@ -234,7 +234,7 @@ const UpdateCartaForm = () => {
 					/>
 				</div>
 				<div className='h-10 w-full flex justify-center p-5 mb-10'>
-					<Button variant='destructive' type='submit' className='animate-heartbeat h-12 w-full dark:bg-destructive/100 text-3xl font-semibold'>
+					<Button variant='destructive' type='submit' className='animate-heartbeat h-12 w-full dark:bg-destructive/100 text-3xl font-sacramento sm:text-4xl font-semibold'>
 						Actualizar cartita
 					</Button>
 				</div>

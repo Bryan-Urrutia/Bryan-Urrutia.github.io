@@ -52,6 +52,8 @@ export const CartaContext = createContext<CartaContextType | null>(null);
 export const CartaContextProvider = ({ children }: { children: React.ReactNode }) => {
 	const [showModal, setShowModal] = useState(false);
 	const [estilo, setEstilo] = useState('');
+	console.log(`/image/carta${estilo.replace(/\s+/g, '')}.webp`);
+	
 	const [loadingCarta, setLoadingCarta] = useState(false);
 
 	const defaultColor: Colores = {
