@@ -17,6 +17,15 @@ export interface Recuerdo {
 	id: string
 }
 
+interface PreviewType {
+	flor: string;
+	color: string;
+	dot_color: string;
+	autor: string;
+	titulo: string;
+	recuerdo: string;
+	foto: File | null;
+}
 
 interface RecuerdoContextType {
 	recuerdos: Recuerdo[],
@@ -28,16 +37,10 @@ interface RecuerdoContextType {
 	setRecuerdo: React.Dispatch<React.SetStateAction<string>>;
 	setTitulo: React.Dispatch<React.SetStateAction<string>>;
 	setAutor: React.Dispatch<React.SetStateAction<string>>;
-	setFoto: React.Dispatch<React.SetStateAction<File | null>>;
-	color: string,
-	dotColor: string,
-	flor: string,
-	recuerdo: string,
-	titulo: string,
-	autor: string,
-	foto: File | null,
 	postFile: (foto: File) => Promise<string | { error: any }>,
 	postRecuerdo: (newRecuerdo: Recuerdo) => void,
+	preview: PreviewType;
+	setPreview: React.Dispatch<React.SetStateAction<PreviewType>>;
 }
 
 export const RecuerdoContext = createContext<RecuerdoContextType | null>(null);
@@ -47,13 +50,23 @@ export const RecuerdoContextProvider = ({ children }: { children: React.ReactNod
 	const [color, setColor] = useState('#fff');
 	const [dotColor, setDotColor] = useState('#fff');
 	const [flor, setFlor] = useState('flor1');
-	const [foto, setFoto] = useState<File | null>(null);
 	const [recuerdo, setRecuerdo] = useState('Recuerdo');
 	const [titulo, setTitulo] = useState('Titulo');
 	const [autor, setAutor] = useState('Autor');
+	const [fotos, setFotos] = useState([]);
 
 	const [recuerdos, setRecuerdos] = useState<Recuerdo[]>([]);
 	const [update, setUpdate] = useState(0);
+
+	const [preview, setPreview] = useState<PreviewType>({
+		flor: "",
+		color: "",
+		dot_color: "",
+		autor: "",
+		titulo: "",
+		recuerdo: "",
+		foto: null,
+	});
 
 	useEffect(() => {
 		const getAllCarta = async () => {
@@ -68,6 +81,19 @@ export const RecuerdoContextProvider = ({ children }: { children: React.ReactNod
 
 		getAllCarta()
 	}, [update]);
+
+	// useEffect(() => {
+	// 	const getAllFotos = async () => {
+	// 		const { data, error } =  supabase
+	// 			.storage.from('nido')
+	// 		;
+	// 		if (data) {
+	// 			setRecuerdos(data);
+	// 		}
+	// 	}
+
+	// 	getAllFotos()
+	// }, [update]);
 
 	/*
 	const handleImageUpload = (event) => {
@@ -110,17 +136,12 @@ export const RecuerdoContextProvider = ({ children }: { children: React.ReactNod
 		const fileName = `${uuidv4()}-${foto.name}`;
 
 		const { data, error } = await supabase.storage
-			.from("recuerdos")
+			.from("nido")
 			.upload(fileName, foto);
 
 		if (error) return { error };
 
-		// devolver URL pública
-		const { data: publicUrl } = supabase.storage
-			.from("recuerdos")
-			.getPublicUrl(fileName);
-
-		return publicUrl.publicUrl;
+		return data.fullPath;
 	};
 
 	const postRecuerdo = async (recuerdo: Recuerdo) => {
@@ -156,19 +177,13 @@ export const RecuerdoContextProvider = ({ children }: { children: React.ReactNod
 				setColor,
 				setDotColor,
 				setFlor,
-				color,
-				dotColor,
-				flor,
-				setFoto,
-				foto,
-				autor,
 				setAutor,
-				titulo,
 				setTitulo,
-				recuerdo,
 				setRecuerdo,
 				postFile,
-				postRecuerdo
+				postRecuerdo,
+				preview,
+				setPreview
 			}}
 		>
 			{children}

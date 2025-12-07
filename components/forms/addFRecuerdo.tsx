@@ -23,8 +23,8 @@ import type { Recuerdo } from "@/context/RecuerdoContext";
 const AddRecuerdoForm = () => {
 	const FormSchema = z.object({
 		flor: z.string(),
-		color: z.hex(),
-		dot_color: z.hex(),
+		color: z.string(),
+		dot_color: z.string(),
 		foto: z.file(),
 		recuerdo: z.string(),
 		autor: z.string(),
@@ -53,15 +53,9 @@ const AddRecuerdoForm = () => {
 
 	if (!recuerdoContext) return null;
 	const {
-		setFlor,
-		setColor,
-		setDotColor,
-		setFoto,
-		setAutor,
-		setTitulo,
-		setRecuerdo,
 		postFile,
-		postRecuerdo
+		postRecuerdo,
+		setPreview
 	} = recuerdoContext;
 
 	if (!music) return null;
@@ -110,7 +104,7 @@ const onSubmit = async (data: z.infer<typeof FormSchema>) => {
 
 	postRecuerdo(nuevoRecuerdo);
 
-	toast.success("Carta creada correctamente");
+	toast.success("Recuerdo creado correctamente");
 };
 
 
@@ -125,7 +119,7 @@ const onSubmit = async (data: z.infer<typeof FormSchema>) => {
 							render={({ field }) => (
 								<FormItem>
 									<FormLabel>Tipo de flor</FormLabel>
-									<Select onValueChange={(e) => { setFlor(e) }} defaultValue={field.value}>
+									<Select onValueChange={(e) => { setPreview(prev => ({ ...prev, flor: e })); }} defaultValue={field.value}>
 										<FormControl>
 											<SelectTrigger className='w-full'>
 												<SelectValue placeholder="" />
@@ -150,7 +144,7 @@ const onSubmit = async (data: z.infer<typeof FormSchema>) => {
 							render={({ field }) => (
 								<FormItem>
 									<FormLabel>Canción</FormLabel>
-									<Select onValueChange={(e) => { }} defaultValue={field.value}>
+									<Select onValueChange={(e) => { setPreview(prev => ({ ...prev, song: e })); }} defaultValue={field.value}>
 										<FormControl>
 											<SelectTrigger className='w-full'>
 												<SelectValue placeholder="" />
@@ -182,7 +176,7 @@ const onSubmit = async (data: z.infer<typeof FormSchema>) => {
 											{...field}
 											onChange={(e) => {
 												field.onChange(e);
-												setColor(e.target.value);
+												setPreview(prev => ({ ...prev, color: e.target.value }));
 											}}
 										/>
 									</FormControl>
@@ -203,7 +197,7 @@ const onSubmit = async (data: z.infer<typeof FormSchema>) => {
 											{...field}
 											onChange={(e) => {
 												field.onChange(e);
-												setDotColor(e.target.value);
+												setPreview(prev => ({ ...prev, dot_color: e.target.value }));
 											}}
 										/>
 									</FormControl>
@@ -221,7 +215,7 @@ const onSubmit = async (data: z.infer<typeof FormSchema>) => {
 								<FormControl>
 									<Input placeholder='Autor' {...field} onChange={(e) => {
 										field.onChange(e);
-										setAutor(e.target.value);
+										setPreview(prev => ({ ...prev, autor: e.target.value }));
 									}} />
 								</FormControl>
 								<FormMessage />
@@ -237,7 +231,7 @@ const onSubmit = async (data: z.infer<typeof FormSchema>) => {
 								<FormControl>
 									<Input placeholder='Titulo' {...field} onChange={(e) => {
 										field.onChange(e);
-										setTitulo(e.target.value);
+										setPreview(prev => ({ ...prev, titulo: e.target.value }));
 									}} />
 								</FormControl>
 								<FormMessage />
@@ -257,7 +251,7 @@ const onSubmit = async (data: z.infer<typeof FormSchema>) => {
 											accept="image/*"
 											onChange={(e) => {
 												const file = e.target.files?.[0] || null;
-												setFoto(file);
+												setPreview(prev => ({ ...prev, foto: file }));
 												field.onChange(file);
 											}}
 										/>
@@ -276,7 +270,7 @@ const onSubmit = async (data: z.infer<typeof FormSchema>) => {
 								<FormControl>
 									<Textarea placeholder='' {...field} onChange={(e) => {
 										field.onChange(e);
-										setRecuerdo(e.target.value);
+										setPreview(prev => ({ ...prev, recuerdo: e.target.value }));
 									}} />
 								</FormControl>
 								<FormMessage />
