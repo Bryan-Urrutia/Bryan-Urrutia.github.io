@@ -31,12 +31,6 @@ interface RecuerdoContextType {
 	recuerdos: Recuerdo[],
 	showModal: boolean,
 	setShowModal: (estado: boolean) => void,
-	setColor: React.Dispatch<React.SetStateAction<string>>;
-	setDotColor: React.Dispatch<React.SetStateAction<string>>;
-	setFlor: React.Dispatch<React.SetStateAction<string>>;
-	setRecuerdo: React.Dispatch<React.SetStateAction<string>>;
-	setTitulo: React.Dispatch<React.SetStateAction<string>>;
-	setAutor: React.Dispatch<React.SetStateAction<string>>;
 	postFile: (foto: File) => Promise<string | { error: any }>,
 	postRecuerdo: (newRecuerdo: Recuerdo) => void,
 	preview: PreviewType;
@@ -47,14 +41,6 @@ export const RecuerdoContext = createContext<RecuerdoContextType | null>(null);
 
 export const RecuerdoContextProvider = ({ children }: { children: React.ReactNode }) => {
 	const [showModal, setShowModal] = useState(false);
-	const [color, setColor] = useState('#fff');
-	const [dotColor, setDotColor] = useState('#fff');
-	const [flor, setFlor] = useState('flor1');
-	const [recuerdo, setRecuerdo] = useState('Recuerdo');
-	const [titulo, setTitulo] = useState('Titulo');
-	const [autor, setAutor] = useState('Autor');
-	const [fotos, setFotos] = useState([]);
-
 	const [recuerdos, setRecuerdos] = useState<Recuerdo[]>([]);
 	const [update, setUpdate] = useState(0);
 
@@ -174,12 +160,6 @@ export const RecuerdoContextProvider = ({ children }: { children: React.ReactNod
 				recuerdos,
 				showModal,
 				setShowModal,
-				setColor,
-				setDotColor,
-				setFlor,
-				setAutor,
-				setTitulo,
-				setRecuerdo,
 				postFile,
 				postRecuerdo,
 				preview,

@@ -22,15 +22,15 @@ import type { Recuerdo } from "@/context/RecuerdoContext";
 
 const AddRecuerdoForm = () => {
 	const FormSchema = z.object({
-		flor: z.string(),
-		color: z.string(),
-		dot_color: z.string(),
-		foto: z.file(),
-		recuerdo: z.string(),
-		autor: z.string(),
-		titulo: z.string(),
-		estilo: z.string(),
-		song: z.string(),
+		flor: z.string().min(1, "Debes seleccionar una flor"),
+		color: z.string().min(1, "Debes seleccionar un color"),
+		dot_color: z.string().min(1, "Debes seleccionar un color de punto"),
+		foto: z.instanceof(File, { message: "Debes subir una foto" }),
+		recuerdo: z.string().min(1, "Debes escribir un recuerdo"),
+		autor: z.string().min(1, "Debes ingresar el autor"),
+		titulo: z.string().min(1, "Debes ingresar un título"),
+		estilo: z.string().min(1, "Debes seleccionar un estilo"),
+		song: z.string().min(1, "Debes seleccionar una canción"),
 	});
 
 	const form = useForm<z.infer<typeof FormSchema>>({
@@ -64,18 +64,6 @@ const AddRecuerdoForm = () => {
 		handleChangeSong,
 	} = music;
 
-	const obtenerCancionPorNombre = (titulo = '') => {
-		const cancionEncontrada = songs.find(
-			(cancion) => cancion.titulo === titulo
-		);
-		return cancionEncontrada ? cancionEncontrada : null;
-	};
-
-	// const handleSong = (titulo = '') => {
-	//     const cancion = obtenerCancionPorNombre(titulo);
-	//     handleChangeSong(titulo);
-	//     setCarta({ ...carta, song: cancion?.titulo ?? '' });
-	// };
 
 
 const onSubmit = async (data: z.infer<typeof FormSchema>) => {
@@ -144,7 +132,8 @@ const onSubmit = async (data: z.infer<typeof FormSchema>) => {
 							render={({ field }) => (
 								<FormItem>
 									<FormLabel>Canción</FormLabel>
-									<Select onValueChange={(e) => { setPreview(prev => ({ ...prev, song: e })); }} defaultValue={field.value}>
+									<Select onValueChange={(e) => { setPreview(prev => ({ ...prev, song: e })); handleChangeSong(e);
+									}} defaultValue={field.value}>
 										<FormControl>
 											<SelectTrigger className='w-full'>
 												<SelectValue placeholder="" />

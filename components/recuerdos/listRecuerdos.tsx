@@ -41,7 +41,7 @@ export default function ListRecuerdos() {
 							<CardContent className="relative w-full h-8/12 bg-gray-400 rounded-none overflow-hidden">
 								<Image
 									alt={item.title}
-									src={`https://gddnqwbbcrcugvglbfcc.supabase.co/storage/v1/object/public/nido/${item.imagen}`}
+									src={`https://gddnqwbbcrcugvglbfcc.supabase.co/storage/v1/object/public/${item.imagen}`}
 									fill
 									className="object-cover"
 								/>
@@ -67,7 +67,7 @@ export default function ListRecuerdos() {
 											<CardContent className="relative w-full h-8/12 bg-gray-400 rounded-none overflow-hidden">
 												<Image
 													alt={item.title}
-													src={`https://gddnqwbbcrcugvglbfcc.supabase.co/storage/v1/object/public/nido/${item.imagen}`}
+													src={`https://gddnqwbbcrcugvglbfcc.supabase.co/storage/v1/object/public/${item.imagen}`}
 													fill
 													className="object-cover"
 												/>
