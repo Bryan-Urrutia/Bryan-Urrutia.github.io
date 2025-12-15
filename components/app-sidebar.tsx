@@ -44,6 +44,10 @@ const data = {
           title: "Recuerditos",
           url: "/recuerditos",
         },
+        {
+          title: "Cancioncitas",
+          url: "/cancioncitas",
+        },
       ],
     }
   ],

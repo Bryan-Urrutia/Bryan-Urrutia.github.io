@@ -36,6 +36,13 @@ export default function Home() {
 					p_descripcion="Instantes guardados con cariño, para volver a enamorarnos cada vez."
 					p_ruta="/recuerditos"
 				/>
+				<CardMenu
+					p_imagen="/image/Cancion.webp"
+					p_nosotros="/image/nosotros4.webp"
+					p_titulo="Cancioncitas"
+					p_descripcion="Instantes guardados con cariño, para volver a enamorarnos cada vez."
+					p_ruta="/cancioncitas"
+				/>
 			</div>
 		</main>
 	);
