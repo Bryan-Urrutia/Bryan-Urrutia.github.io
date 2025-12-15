@@ -15,12 +15,7 @@ import {
   MediaFullscreenButton,
 } from "media-chrome/react";
 
-interface VideoCardYouTubeProps {
-  videoId: string;
-  title?: string;
-}
-
-export default function VideoCardYouTube({ videoId, title = "Mi Video" }: VideoCardYouTubeProps) {
+export default function VideoCardYouTube({ videoId = "", title = "Mi Video" }) {
   // const youtubeUrl = `https://www.youtube.com/embed/${videoId}?controls=0&modestbranding=1&rel=0`;
 
   return (
