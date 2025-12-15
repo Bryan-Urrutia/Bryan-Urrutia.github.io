@@ -16,7 +16,7 @@ export default function Home() {
 				Cancioncitas ❤
 			</h1>
 
-			<VideoCardDrive driveId="1w0NysTajnkIfbPrG26vTrTQmOfJYLJy_" title="Canciones" />
+			<VideoCardDrive />
 		</main>
 	);
 }
