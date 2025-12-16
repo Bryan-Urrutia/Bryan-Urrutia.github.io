@@ -40,15 +40,22 @@ export default function Home() {
 					p_imagen="/image/Cancion.webp"
 					p_nosotros="/image/nosotros4.webp"
 					p_titulo="Cancioncitas"
-					p_descripcion="Instantes guardados con cariño, para volver a enamorarnos cada vez."
+					p_descripcion="Melodías hechas sentimiento, para decir lo que el corazón canta bajito."
 					p_ruta="/cancioncitas"
 				/>
 				<CardMenu
-					p_imagen="/image/Cancion.webp"
-					p_nosotros="/image/nosotros4.webp"
+					p_imagen="/image/Dibujo.webp"
+					p_nosotros="/image/nosotros5.webp"
 					p_titulo="Dibujitos"
-					p_descripcion="Instantes guardados con cariño, para volver a enamorarnos cada vez."
+					p_descripcion="Trazos simples nacidos del amor, pequeños detalles que dicen mucho."
 					p_ruta="/dibujitos"
+				/>
+				<CardMenu
+					p_imagen="/image/Poema.webp"
+					p_nosotros="/image/nosotros6.webp"
+					p_titulo="Poemas"
+					p_descripcion="Palabras que abrazan, versos escritos para quedarse en el alma."
+					p_ruta="/poema"
 				/>
 			</div>
 		</main>

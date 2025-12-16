@@ -48,6 +48,14 @@ const data = {
           title: "Cancioncitas",
           url: "/cancioncitas",
         },
+        {
+          title: "Dibujitos",
+          url: "/dibujitos",
+        },
+        {
+          title: "Poemas",
+          url: "/poema",
+        },
       ],
     }
   ],
