@@ -262,8 +262,36 @@ const drawButterfly = (
 		if (ctx) fillBackground(ctx);
 	}, [bgColor]);
 
+	useEffect(() => {
+	const canvas = canvasRef.current;
+	if (!canvas) return;
+
+	const lock = () => {
+		document.body.style.overflow = "hidden";
+		document.body.style.touchAction = "none";
+	};
+
+	const unlock = () => {
+		document.body.style.overflow = "";
+		document.body.style.touchAction = "";
+	};
+
+	canvas.addEventListener("mousedown", lock);
+	canvas.addEventListener("touchstart", lock, { passive: false });
+
+	window.addEventListener("mouseup", unlock);
+	window.addEventListener("touchend", unlock);
+
+	return () => {
+		canvas.removeEventListener("mousedown", lock);
+		canvas.removeEventListener("touchstart", lock);
+		window.removeEventListener("mouseup", unlock);
+		window.removeEventListener("touchend", unlock);
+	};
+}, []);
+
 	return (
-		<div className="flex flex-col gap-4 items-center pt-20">
+		<div className="flex flex-col gap-4 items-center pt-10">
 			<div className="flex flex-wrap gap-3 justify-center items-center">
 				<button onClick={() => setMode("draw")} className={`px-3 py-1 rounded ${mode === "draw" ? "bg-blue-600 text-white" : "bg-gray-200"}`}>✏️ Dibujar</button>
 				<button onClick={() => setMode("erase")} className={`px-3 py-1 rounded ${mode === "erase" ? "bg-orange-500 text-white" : "bg-gray-200"}`}>🧽 Borrar</button>
@@ -294,7 +322,7 @@ const drawButterfly = (
 				ref={canvasRef}
 				width={canvasWidth}
 				height={canvasHeight}
-				className="border-2 border-gray-400 rounded touch-none select-none"
+				className="border-2 border-gray-400 rounded"
 				onMouseDown={onMouseDown}
 				onMouseMove={onMouseMove}
 				onMouseUp={onMouseUp}
