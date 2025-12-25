@@ -22,8 +22,8 @@ import type { Recuerdo } from "@/context/RecuerdoContext";
 
 const AddRecuerdoForm = () => {
 	const FormSchema = z.object({
-		flor: z.string().min(1, "Debes seleccionar una flor"),
-		color: z.string().min(1, "Debes seleccionar un color"),
+		flor: z.string(),
+		color: z.string(),
 		dot_color: z.string().min(1, "Debes seleccionar un color de punto"),
 		foto: z.instanceof(File, { message: "Debes subir una foto" }),
 		recuerdo: z.string().min(1, "Debes escribir un recuerdo"),
@@ -269,7 +269,7 @@ const onSubmit = async (data: z.infer<typeof FormSchema>) => {
 				</div>
 				<div className='h-10 w-full flex justify-center p-5 mb-10'>
 					<Button variant='destructive' type='submit' className='animate-heartbeat h-12 w-full dark:bg-destructive/100 text-3xl font-sacramento sm:text-4xl font-semibold'>
-						Crear cartita
+						Crear recuerdito
 					</Button>
 				</div>
 			</form>
